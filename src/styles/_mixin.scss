@@ -1,0 +1,39 @@
+@mixin hover {
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      @content;
+    }
+  }
+}
+
+@mixin active {
+  &:active {
+    @content;
+  }
+}
+
+@mixin buttonDefault {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@mixin mobile {
+  @media (min-width: 359.98px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1175.98px) {
+    @content;
+  }
+}

@@ -1,2 +1,8 @@
+.navigation {
+  display: flex;
+  position: absolute;
+}
+
 .nav_btn {
+  z-index: 2;
 }

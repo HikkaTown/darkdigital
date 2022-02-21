@@ -14,7 +14,7 @@ export default function NavigationBlock({ changePosition }) {
     { title: "Вниз право", xPos: 1, yPos: -1 },
   ];
   return (
-    <>
+    <div className={s.navigation}>
       {positions.map((item, index) => {
         const { title, xPos, yPos } = item;
         return (
@@ -29,6 +29,6 @@ export default function NavigationBlock({ changePosition }) {
           </button>
         );
       })}
-    </>
+    </div>
   );
 }

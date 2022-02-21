@@ -9,12 +9,18 @@ export default function ContentContainer() {
   const [posY, setPosY] = useState(0);
 
   const handleNav = (dataXpos, dataYpos) => {
-    setPosX(dataXpos);
-    setPosY(dataYpos);
+    const newPosX = posX + dataXpos;
+    const newPosY = posY + dataYpos;
+    setPosX(newPosX);
+    setPosY(newPosY);
   };
   return (
     <section className={s.site_wrap}>
-      <NavigationBlock changePosition={handleNav} />
+      <NavigationBlock
+        changePosition={handleNav}
+        currentPosX={posX}
+        currentPosY={posY}
+      />
       <div
         style={{
           transform: `translateX(${posX}00%) translateY(${posY}00%)`,
@@ -29,7 +35,7 @@ export default function ContentContainer() {
         />
         <ConctactScree
           classPanel={s.panel}
-          dataXpos={0}
+          dataXpos={1}
           dataYpos={1}
           changePosition={handleNav}
         />

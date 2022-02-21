@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import s from "./MainScreen.module.scss";
 import cs from "classnames";
+import { LazyImageWrapper } from "../LazyImage";
 
 export default function MainScreen({
   classPanel,
@@ -10,14 +11,15 @@ export default function MainScreen({
 }) {
   return (
     <div className={cs(classPanel)} data-x-pos={dataXpos} data-y-pos={dataYpos}>
-      <h1>Главная</h1>
-      <button
-        onClick={() => {
-          changePosition(0, 1);
-        }}
-      >
-        Nivigation
-      </button>
+      <div className={s.container}>
+        <div className={s.header}>
+          <LazyImageWrapper
+            src={"/assets/logo.png"}
+            className={[s.logo]}
+            wrapperClass={s.logo_wrapper}
+          />
+        </div>
+      </div>
     </div>
   );
 }

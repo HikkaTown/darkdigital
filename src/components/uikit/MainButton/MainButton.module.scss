@@ -1,0 +1,13 @@
+.btn {
+  @include buttonDefault;
+  background-color: #0057ff;
+  border-radius: 10px;
+  transition: 0.5s;
+  color: #fff;
+  cursor: pointer;
+  padding: 24px 54px;
+  @include body2(#fff);
+  @include tablet {
+    padding: 35px 102px;
+  }
+}

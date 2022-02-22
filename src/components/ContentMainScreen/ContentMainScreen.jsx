@@ -1,4 +1,5 @@
 import React from "react";
+import MainButton from "../uikit/MainButton/MainButton";
 import s from "./ContentMainScreen.module.scss";
 
 export default function ContentMainScreen() {
@@ -9,6 +10,7 @@ export default function ContentMainScreen() {
         Мы разработываем сайты любого типа. От лендинга до мультифункциональных
         информационных порталов.
       </p>
+      <MainButton className={s.btn} text={"Обсудить мой проект"} />
     </div>
   );
 }

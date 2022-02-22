@@ -3,6 +3,7 @@
   height: 100%;
   width: 100%;
   top: 0;
+  left: 0;
 }
 
 .ripples {
@@ -22,30 +23,30 @@
 }
 
 .ripple_1 {
-  animation: ripple 4s linear infinite;
+  animation: ripple 5s linear infinite;
   box-shadow: 0px 0px 70px rgba(0, 87, 255, 0.24);
 }
 .ripple_2 {
-  animation: ripple 4s linear infinite 1s;
+  animation: ripple 5s linear infinite 1s;
   box-shadow: 0px 4px 50px rgba(0, 87, 255, 0.4);
 }
 .ripple_3 {
-  animation: ripple 4s linear infinite 1.75s;
+  animation: ripple 5s linear infinite 1.75s;
   box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.28);
 }
 
 .ripple_4 {
-  animation: ripple 4s linear infinite 2.5s;
+  animation: ripple 5s linear infinite 2.5s;
   box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.07);
 }
 
 .ripple_5 {
-  animation: ripple 4s linear infinite 3.25s;
+  animation: ripple 5s linear infinite 3.25s;
   box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.15);
 }
 
 .ripple_6 {
-  animation: ripple 4s linear infinite 4s;
+  animation: ripple 5s linear infinite 4s;
   box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.15);
 }
 

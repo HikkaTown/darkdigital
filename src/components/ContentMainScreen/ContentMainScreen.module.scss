@@ -1,0 +1,73 @@
+.block {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  width: 100vw;
+  margin: 0 auto;
+  top: calc(50% - 40px);
+  transform: translateY(-50%);
+  @include tablet {
+    max-width: 680px;
+  }
+
+  @include desktop {
+    max-width: 1192px;
+  }
+}
+
+.head {
+  max-width: calc(100% - 32px);
+  width: 100vw;
+  margin: 0 auto 20px auto;
+  padding: 0;
+  text-align: center;
+  @include headline1-mobile(#fff);
+
+  @include tablet {
+    margin-bottom: 30px;
+    @include headline1(#fff);
+  }
+  @include desktop {
+    max-width: 810px;
+  }
+}
+
+.title {
+  padding: 0;
+  margin: 0 auto 30px auto;
+  max-width: calc(100% - 32px);
+  width: 100vw;
+  @include body1-mobile(#fff);
+  text-align: center;
+  @include tablet {
+    margin-bottom: 50px;
+    @include body1(#fff);
+  }
+  @include desktop {
+    max-width: 710px;
+  }
+}
+
+.btn {
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    display: block;
+    border-radius: 10px;
+    background-color: #0441b8;
+    bottom: -5px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: 0.3s;
+  }
+  @include hover {
+    &::before {
+      bottom: 0;
+    }
+  }
+}

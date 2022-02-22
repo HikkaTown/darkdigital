@@ -1,6 +1,7 @@
 .site_wrap {
   transition: transform $fast $easing;
   position: relative;
+  overflow: hidden;
 }
 
 .panel_wrap {

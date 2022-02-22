@@ -3,6 +3,7 @@ import s from "./MainScreen.module.scss";
 import cs from "classnames";
 import { LazyImageWrapper } from "../LazyImage";
 import RippleMainScreen from "../RippleMainScreen/RippleMainScreen";
+import ContentMainScreen from "../ContentMainScreen/ContentMainScreen";
 
 export default function MainScreen({
   classPanel,
@@ -21,6 +22,7 @@ export default function MainScreen({
           />
         </div>
         <RippleMainScreen />
+        <ContentMainScreen />
       </div>
     </div>
   );

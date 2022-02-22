@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import s from "./MainScreen.module.scss";
 import cs from "classnames";
 import { LazyImageWrapper } from "../LazyImage";
+import RippleMainScreen from "../RippleMainScreen/RippleMainScreen";
 
 export default function MainScreen({
   classPanel,
@@ -19,6 +20,7 @@ export default function MainScreen({
             wrapperClass={s.logo_wrapper}
           />
         </div>
+        <RippleMainScreen />
       </div>
     </div>
   );

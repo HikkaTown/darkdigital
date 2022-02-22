@@ -1,0 +1,61 @@
+.block {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.ripples {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ripple {
+  height: 350px;
+  width: 350px;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.ripple_1 {
+  animation: ripple 4s linear infinite;
+  box-shadow: 0px 0px 70px rgba(0, 87, 255, 0.24);
+}
+.ripple_2 {
+  animation: ripple 4s linear infinite 1s;
+  box-shadow: 0px 4px 50px rgba(0, 87, 255, 0.4);
+}
+.ripple_3 {
+  animation: ripple 4s linear infinite 1.75s;
+  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.28);
+}
+
+.ripple_4 {
+  animation: ripple 4s linear infinite 2.5s;
+  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.07);
+}
+
+.ripple_5 {
+  animation: ripple 4s linear infinite 3.25s;
+  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.15);
+}
+
+.ripple_6 {
+  animation: ripple 4s linear infinite 4s;
+  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.15);
+}
+
+@keyframes ripple {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(3);
+    opacity: 0;
+  }
+}

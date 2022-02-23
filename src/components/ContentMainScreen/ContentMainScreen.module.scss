@@ -39,6 +39,7 @@
   width: 100vw;
   @include body1-mobile(#fff);
   text-align: center;
+  text-transform: none;
   @include tablet {
     margin-bottom: 50px;
     @include body1(#fff);

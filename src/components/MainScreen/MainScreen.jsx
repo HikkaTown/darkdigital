@@ -4,6 +4,7 @@ import cs from "classnames";
 import { LazyImageWrapper } from "../LazyImage";
 import RippleMainScreen from "../RippleMainScreen/RippleMainScreen";
 import ContentMainScreen from "../ContentMainScreen/ContentMainScreen";
+import NavigationList from "../NavigationList/NavigationList";
 
 export default function MainScreen({
   classPanel,
@@ -15,11 +16,14 @@ export default function MainScreen({
     <div className={cs(classPanel)} data-x-pos={dataXpos} data-y-pos={dataYpos}>
       <div className={s.container}>
         <div className={s.header}>
-          <LazyImageWrapper
-            src={"/assets/logo.png"}
-            className={[s.logo]}
-            wrapperClass={s.logo_wrapper}
-          />
+          <div className={s.logo}>
+            <p className={s.company}>
+              <span className={s.dark}>Dark</span>
+              <span className={s.digital}>Digital</span>
+            </p>
+            <p className={s.description}>Web Studio</p>
+          </div>
+          <NavigationList className={s.nav} />
         </div>
         <RippleMainScreen />
         <ContentMainScreen />

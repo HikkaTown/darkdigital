@@ -3,18 +3,92 @@
   width: 100vw;
   height: 100%;
   margin: 0 auto;
-  padding: 40px;
   overflow: hidden;
+  padding: 0;
+  @include tablet {
+    max-width: 680px;
+  }
+  @include desktop {
+    width: 100%;
+    padding: 40px;
+    margin: auto;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  transform: translateY(60px);
+  @include tablet {
+    transform: translateY(0px);
+  }
 }
 
 .logo {
-  height: 111px;
-  max-width: 249px;
-  width: 249px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo_wrapper {
-  height: 111px;
-  max-width: 249px;
-  width: 249px;
+.company {
+  padding: 0;
+  margin: 0;
+  font-family: "The Breakdown";
+  text-transform: capitalize;
+  font-size: 44px;
+  line-height: 49px;
+  @include tablet {
+    font-size: 70px;
+    line-height: 77px;
+  }
+}
+
+.dark {
+  color: #fff;
+}
+
+.digital {
+  color: #0057ff;
+  margin-left: 5px;
+  @include tablet {
+    margin-left: 15px;
+  }
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+  margin-right: 20px;
+  position: relative;
+  @include body3-mobile(#fff);
+  text-transform: capitalize;
+  &::before {
+    content: "";
+    display: block;
+    background-color: #fff;
+    max-width: 1px;
+    width: 1px;
+    height: 24px;
+    margin-right: 20px;
+    @include tablet {
+      height: 34px;
+    }
+  }
+  @include tablet {
+    @include body3(#fff);
+  }
+}
+
+.nav {
+  display: none;
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: flex;
+  }
 }

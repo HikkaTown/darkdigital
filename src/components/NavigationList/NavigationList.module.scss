@@ -1,0 +1,23 @@
+.nav {
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  margin-left: auto;
+}
+
+.nav_btn {
+  @include buttonDefault;
+  cursor: pointer;
+  transition: 0.5s;
+  padding-right: 33px;
+  @include body2(#fff);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  &:last-of-type {
+    padding-right: 0;
+  }
+  @include hover {
+    opacity: 0.5;
+  }
+}

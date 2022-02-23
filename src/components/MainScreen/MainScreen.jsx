@@ -5,6 +5,7 @@ import { LazyImageWrapper } from "../LazyImage";
 import RippleMainScreen from "../RippleMainScreen/RippleMainScreen";
 import ContentMainScreen from "../ContentMainScreen/ContentMainScreen";
 import NavigationList from "../NavigationList/NavigationList";
+import LogoComponent from "../uikit/LogoComponent/LogoComponent";
 
 export default function MainScreen({
   classPanel,
@@ -16,13 +17,7 @@ export default function MainScreen({
     <div className={cs(classPanel)} data-x-pos={dataXpos} data-y-pos={dataYpos}>
       <div className={s.container}>
         <div className={s.header}>
-          <div className={s.logo}>
-            <p className={s.company}>
-              <span className={s.dark}>Dark</span>
-              <span className={s.digital}>Digital</span>
-            </p>
-            <p className={s.description}>Web Studio</p>
-          </div>
+          <LogoComponent />
           <NavigationList className={s.nav} />
         </div>
         <RippleMainScreen />

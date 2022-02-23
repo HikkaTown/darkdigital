@@ -4,6 +4,7 @@ import s from "./ContentContainer.module.scss";
 import cs from "classnames";
 import ConctactScree from "../ContactScreen/ConctactScree";
 import NavigationBlock from "../NavigationBlock/NavigationBlock";
+import ServicesScreen from "../ServicesScreen/ServicesScreen";
 export default function ContentContainer() {
   const [posX, setPosX] = useState(0);
   const [posY, setPosY] = useState(0);
@@ -36,6 +37,12 @@ export default function ContentContainer() {
         <ConctactScree
           classPanel={s.panel}
           dataXpos={1}
+          dataYpos={1}
+          changePosition={handleNav}
+        />
+        <ServicesScreen
+          classPanel={s.panel}
+          dataXpos={0}
           dataYpos={1}
           changePosition={handleNav}
         />

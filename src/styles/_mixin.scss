@@ -53,6 +53,14 @@
   color: $color;
 }
 
+@mixin headline-screen($color) {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: $color;
+}
+
 @mixin body1($color) {
   font-family: "Montserrat";
   font-weight: 500;

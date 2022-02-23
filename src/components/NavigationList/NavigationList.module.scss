@@ -1,8 +1,13 @@
 .nav {
   align-items: flex-start;
   position: relative;
-  z-index: 2;
   margin-left: auto;
+  display: none;
+  @include desktop {
+    position: relative;
+    z-index: 2;
+    display: flex;
+  }
 }
 
 .nav_btn {

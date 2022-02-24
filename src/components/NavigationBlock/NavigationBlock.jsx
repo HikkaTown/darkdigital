@@ -19,30 +19,32 @@ export default function NavigationBlock({
     { title: "Вниз право", xPos: -1, yPos: -1, className: s.nav_down_right },
   ];
   return (
-    <div className={s.navigation}>
-      {positions.map((item, index) => {
-        const { title, xPos, yPos, className } = item;
-        return (
-          <button
-            key={index}
-            className={cs(s.nav_btn, className)}
-            style={{
-              display:
-                (currentPosX === 1 && xPos === 1) ||
-                (currentPosX === -1 && xPos === -1) ||
-                (currentPosY === 1 && yPos === 1) ||
-                (currentPosY === -1 && yPos === -1)
-                  ? "none"
-                  : "block",
-            }}
-            onClick={() => {
-              changePosition(xPos, yPos);
-            }}
-          >
-            {title}
-          </button>
-        );
-      })}
+    <div className={s.navigation_list}>
+      <div className={s.navigation}>
+        {positions.map((item, index) => {
+          const { title, xPos, yPos, className } = item;
+          return (
+            <button
+              key={index}
+              className={cs(s.nav_btn, className)}
+              style={{
+                display:
+                  (currentPosX === 1 && xPos === 1) ||
+                  (currentPosX === -1 && xPos === -1) ||
+                  (currentPosY === 1 && yPos === 1) ||
+                  (currentPosY === -1 && yPos === -1)
+                    ? "none"
+                    : "block",
+              }}
+              onClick={() => {
+                changePosition(xPos, yPos);
+              }}
+            >
+              {title}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

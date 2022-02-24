@@ -9,7 +9,7 @@
     max-width: 680px;
   }
   @include desktop {
-    max-width: 70vw;
+    max-width: 90vw;
     padding: 40px;
     margin: auto;
   }
@@ -24,6 +24,9 @@
   width: 100%;
   @include tablet {
     transform: translateY(0px);
+  }
+  @include desktop {
+    transform: translateY(100px);
   }
 }
 

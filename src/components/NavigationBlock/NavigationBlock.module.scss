@@ -1,8 +1,14 @@
+.navigation_list {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
 .navigation {
   display: none;
   @include tablet {
     display: block;
-    position: absolute;
+    position: relative;
     height: 100vh;
     width: 100vw;
   }
@@ -13,16 +19,28 @@
   z-index: 2;
   @include buttonDefault;
   color: #fff;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.5px;
+  transition: 0.3s;
+  @include desktop {
+    font-size: 24px;
+    line-height: 30px;
+    @include hover {
+      opacity: 0.5;
+    }
+  }
 }
 
 .nav_up {
-  top: 0;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .nav_down {
-  bottom: 0;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -30,31 +48,38 @@
 .nav_left {
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
+  @include desktop {
+    transform: rotate(-90deg);
+  }
 }
 
 .nav_right {
-  right: 0;
+  right: -30px;
   top: 50%;
-  transform: translateY(-50%);
+  display: block;
+  // transform: translateX(0px) rotate(90deg) translateY(-50%);
+  @include desktop {
+    transform: rotate(90deg);
+    // transform: translateX(0px) rotate(90deg) translateY(-50%);
+  }
 }
 
 .nav_up_left {
-  top: 0;
-  left: 0;
+  top: 50px;
+  left: 50px;
 }
 
 .nav_up_right {
-  top: 0;
-  right: 0;
+  top: 50px;
+  right: 50px;
 }
 
 .nav_down_right {
-  bottom: 0;
-  right: 0;
+  bottom: 50px;
+  right: 50px;
 }
 
 .nav_down_left {
-  bottom: 0;
-  left: 0;
+  bottom: 50px;
+  left: 50px;
 }

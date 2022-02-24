@@ -6,7 +6,7 @@
   width: 100vw;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: auto;
   padding: 0;
   @include tablet {
     max-width: 680px;

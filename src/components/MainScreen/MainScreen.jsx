@@ -6,6 +6,7 @@ import RippleMainScreen from "../RippleMainScreen/RippleMainScreen";
 import ContentMainScreen from "../ContentMainScreen/ContentMainScreen";
 import NavigationList from "../NavigationList/NavigationList";
 import LogoComponent from "../uikit/LogoComponent/LogoComponent";
+import NavigationModalBtn from "../uikit/NavigationModalBtn/NavigationModalBtn";
 
 export default function MainScreen({
   classPanel,
@@ -17,8 +18,9 @@ export default function MainScreen({
     <div className={cs(classPanel)} data-x-pos={dataXpos} data-y-pos={dataYpos}>
       <div className={s.container}>
         <div className={s.header}>
-          <LogoComponent />
+          <LogoComponent classLogo={s.logo} />
           <NavigationList className={s.nav} />
+          <NavigationModalBtn />
         </div>
         <RippleMainScreen />
         <ContentMainScreen />

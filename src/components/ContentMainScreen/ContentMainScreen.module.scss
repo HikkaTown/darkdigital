@@ -16,9 +16,9 @@
 }
 
 .head {
-  max-width: calc(100% - 32px);
+  max-width: calc(100% - 30px);
   width: 100vw;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 15px auto;
   padding: 0;
   text-align: center;
   @include headline1-mobile(#fff);
@@ -35,13 +35,13 @@
 .title {
   padding: 0;
   margin: 0 auto 30px auto;
-  max-width: calc(100% - 32px);
+  max-width: calc(100% - 30px);
   width: 100vw;
   @include body1-mobile(#fff);
   text-align: center;
   text-transform: none;
+  margin-bottom: 30px;
   @include tablet {
-    margin-bottom: 50px;
     @include body1(#fff);
   }
   @include desktop {
@@ -61,9 +61,11 @@
     border-radius: 10px;
     background-color: #0441b8;
     bottom: -5px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     height: 100%;
-    width: 100%;
+    width: calc(100% - 10px);
+    margin: 0 auto;
     transition: 0.3s;
   }
   @include hover {

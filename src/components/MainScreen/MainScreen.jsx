@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import s from "./MainScreen.module.scss";
 import cs from "classnames";
 import { LazyImageWrapper } from "../LazyImage";
@@ -7,6 +7,7 @@ import ContentMainScreen from "../ContentMainScreen/ContentMainScreen";
 import NavigationList from "../NavigationList/NavigationList";
 import LogoComponent from "../uikit/LogoComponent/LogoComponent";
 import NavigationModalBtn from "../uikit/NavigationModalBtn/NavigationModalBtn";
+import ModalSectionList from "../ModalSectionList/ModalSectionList";
 
 export default function MainScreen({
   classPanel,
@@ -14,6 +15,7 @@ export default function MainScreen({
   dataYpos,
   changePosition,
 }) {
+  const [isOpened, setIsOpened] = useState(true);
   return (
     <div className={cs(classPanel)} data-x-pos={dataXpos} data-y-pos={dataYpos}>
       <div className={s.container}>
@@ -24,6 +26,15 @@ export default function MainScreen({
         </div>
         <RippleMainScreen />
         <ContentMainScreen />
+
+        {isOpened && (
+          <ModalSectionList
+            isOpened={isOpened}
+            onClose={() => {
+              setIsOpened((prev) => !prev);
+            }}
+          />
+        )}
       </div>
     </div>
   );

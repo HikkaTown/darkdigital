@@ -14,6 +14,7 @@
     .menu_trigger_bar {
       &:before {
         width: 100%;
+        border-radius: 50px;
       }
     }
 
@@ -45,7 +46,7 @@
     height: 100%;
     background-color: #fff;
     transition: $slide;
-    border-radius: 3px;
+    border-radius: 50px;
   }
 
   &.top {

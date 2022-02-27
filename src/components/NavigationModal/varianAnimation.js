@@ -56,7 +56,7 @@ export const bottomLine = {
   },
   visible: {
     delay: 1,
-    left: "-20%",
+    left: "-11%",
     top: "105%",
     y: "-70%",
     rotate: "-45deg",

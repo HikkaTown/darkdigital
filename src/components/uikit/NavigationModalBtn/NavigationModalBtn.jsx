@@ -48,38 +48,10 @@ export default function NavigationModalBtn({ className }) {
             <motion.span
               className={cs(s.menu_trigger_bar, s.bottom)}
               variants={animationTopLine}
-              initial="visible"
+              initial="initial"
               animate="visible"
               exit="exit"
               transition={{ duration: 0.3, delay: 0.2, type: "tween" }}
-            ></motion.span>
-          </motion.button>
-        )}
-      </AnimatePresence>
-      <AnimatePresence exitBeforeEnter>
-        {isOpened && (
-          <motion.button
-            onClick={handleMenu}
-            className={s.close_trigger}
-            variants={visibleBtn}
-            initial="initial"
-            animate="visible"
-            exit="hidden2"
-            transition={{ duration: 1, type: "tween" }}
-          >
-            <motion.span
-              className={cs(s.close_trigger_bar, s.left)}
-              variants={closeVariantsFirst}
-              initial="initial"
-              animate="visible"
-              exit="exit"
-            ></motion.span>
-            <motion.span
-              className={cs(s.close_trigger_bar, s.right)}
-              variants={closeVariantsSecond}
-              initial="initial"
-              animate="visible"
-              exit="exit"
             ></motion.span>
           </motion.button>
         )}

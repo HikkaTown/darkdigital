@@ -3,7 +3,7 @@ export const visibleBtnOpen = {
     opacity: 0,
     zIndex: 9999,
     transition: {
-      delay: 2,
+      delay: 1,
       duration: 0.5,
     },
   },
@@ -24,11 +24,19 @@ export const visibleBtnOpen = {
 
 export const animationTopLine = {
   initial: {
+    transition: {
+      delay: 2,
+    },
+    opacity: 0,
     rotate: "-45deg",
     x: 45,
     y: -45,
   },
   visible: {
+    transition: {
+      delay: 2,
+    },
+    opacity: 1,
     rotate: "-45deg",
     x: 0,
     y: 0,
@@ -43,19 +51,9 @@ export const animationTopLine = {
 export const visibleBtn = {
   initial: {
     opacity: 0,
-    zIndex: 9999,
-    transition: {
-      delay: 1,
-      duration: 1,
-    },
   },
   visible: {
     opacity: 1,
-    zIndex: 9999,
-    // transition: {
-    //   delay: 2,
-    //   delayChildren: 2,
-    // },
   },
   hidden2: {
     opacity: 0,
@@ -69,8 +67,8 @@ export const closeVariantsFirst = {
     opacity: 0,
     rotate: "-45deg",
     transition: {
-      delay: 2,
-      duration: 1,
+      delay: 1,
+      duration: 0.3,
     },
   },
   visible: {
@@ -79,7 +77,7 @@ export const closeVariantsFirst = {
     opacity: 1,
     rotate: "-45deg",
     transition: {
-      // delay: 1,
+      delay: 1,
       duration: 0.3,
     },
   },
@@ -98,8 +96,8 @@ export const closeVariantsSecond = {
     opacity: 0,
     rotate: "45deg",
     transition: {
-      delay: 2,
-      duration: 1,
+      delay: 1,
+      duration: 0.3,
     },
   },
   visible: {
@@ -108,7 +106,7 @@ export const closeVariantsSecond = {
     opacity: 1,
     rotate: "45deg",
     transition: {
-      // delay: 1,
+      delay: 1,
       duration: 0.3,
     },
   },

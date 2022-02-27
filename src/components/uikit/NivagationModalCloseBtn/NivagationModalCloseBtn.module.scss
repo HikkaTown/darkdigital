@@ -10,7 +10,7 @@
   cursor: pointer;
   z-index: 333;
 
-  &:hover {
+  @include hover {
     .menu_trigger_bar {
       &:before {
         width: 100%;
@@ -79,15 +79,11 @@
     display: block;
     width: 0%;
     height: 100%;
-    background-color: #fff;
+    background-color: #5c5c5c;
     transition: $slide;
   }
 
-  &.left {
-    // transform: translateX(0) translateY(0) rotate(-45deg);
-  }
   &.right {
-    // transform: translateX(0) translateY(0) rotate(45deg);
     top: -3px;
   }
 }

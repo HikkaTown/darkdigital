@@ -52,7 +52,7 @@ const containerVariants = {
   },
   visible: {
     transition: {
-      delay: 0.5,
+      delay: 0.4,
     },
     backgroundColor: "rgba(255,255,255,1)",
   },

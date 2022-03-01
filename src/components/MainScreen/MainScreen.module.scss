@@ -15,24 +15,6 @@
   }
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  // transform: translateY(60px);
-  padding-top: 20px;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  @include tablet {
-  }
-  @include desktop {
-  }
-}
-
-.logo {
-  margin-right: auto;
-}
-
 .company {
   padding: 0;
   margin: 0;
@@ -82,18 +64,6 @@
   }
   @include tablet {
     @include body3(#fff);
-  }
-}
-
-.nav {
-  display: none;
-  @include tablet {
-    display: none;
-  }
-  @include desktop {
-    display: flex;
-    position: relative;
-    z-index: 2;
   }
 }
 

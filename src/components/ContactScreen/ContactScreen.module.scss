@@ -1,0 +1,116 @@
+.container {
+  max-width: calc(100% - 30px);
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.block_list {
+  display: block;
+  margin: 46px auto 28px;
+}
+
+.head {
+  text-align: center;
+  padding: 0;
+  margin: 0 0 15px 0;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 34px;
+  color: #fff;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  background: #0057ff;
+  border-radius: 10px;
+  padding: 20px 11px 20px 15px;
+  max-width: calc(100% / 2 - 10px);
+  width: 100vw;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  height: 17px;
+  width: 15px;
+}
+
+.icon_wrapper {
+  max-height: 17px;
+  height: 100vh;
+  max-width: 20px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_messager {
+  height: 28px;
+  max-width: 28px;
+  width: 100vw;
+}
+
+.icon_messager_wrapper {
+  height: 28px;
+  max-width: 28px;
+  width: 100vw;
+}
+
+.messager_link {
+  margin-right: 15px;
+  transition: 0.3s;
+  @include hover {
+    opacity: 0.5;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.name {
+  padding: 0;
+  margin: 0 0 0 15px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  &_margin {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.link {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 28px;
+  color: #fff;
+  margin-top: 12px;
+}

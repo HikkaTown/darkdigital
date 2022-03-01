@@ -96,3 +96,15 @@
     z-index: 2;
   }
 }
+
+.show_screens {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: 0.3s;
+  @include hover {
+    opacity: 0.5;
+  }
+}

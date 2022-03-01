@@ -8,6 +8,8 @@ import NavigationList from "../NavigationList/NavigationList";
 import LogoComponent from "../uikit/LogoComponent/LogoComponent";
 import NavigationModalBtn from "../uikit/NavigationModalBtn/NavigationModalBtn";
 import ModalSectionList from "../ModalSectionList/ModalSectionList";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 
 export default function MainScreen({
   classPanel,
@@ -15,7 +17,6 @@ export default function MainScreen({
   dataYpos,
   changePosition,
 }) {
-  const [isOpened, setIsOpened] = useState(true);
   return (
     <div className={cs(classPanel)} data-x-pos={dataXpos} data-y-pos={dataYpos}>
       <div className={s.container}>
@@ -24,17 +25,12 @@ export default function MainScreen({
           <NavigationList className={s.nav} />
           <NavigationModalBtn />
         </div>
+        <OpenBlockList
+          className={s.show_screens}
+          onChangePosition={changePosition}
+        />
         <RippleMainScreen />
         <ContentMainScreen />
-
-        {isOpened && (
-          <ModalSectionList
-            isOpened={isOpened}
-            onClose={() => {
-              setIsOpened((prev) => !prev);
-            }}
-          />
-        )}
       </div>
     </div>
   );

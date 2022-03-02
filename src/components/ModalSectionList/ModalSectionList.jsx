@@ -37,7 +37,10 @@ export default function ModalSectionList({
                   initial="initial"
                   animate="show"
                   exit="exit"
-                  transition={{ duration: 0.7, delay: +`1.${index}` }}
+                  transition={{
+                    duration: +`0.4${index}`,
+                    delay: +`0.9${index}`,
+                  }}
                   layout="animation"
                   key={index}
                   type="button"

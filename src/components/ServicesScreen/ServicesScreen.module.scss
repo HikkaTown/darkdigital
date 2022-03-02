@@ -2,20 +2,25 @@
   background-color: #0057ff;
 }
 .container {
-  max-width: 100%;
+  max-width: calc(100% - 30px);
   width: 100vw;
   height: 100%;
   margin: 0 auto;
-  overflow: auto;
+  // overflow: hidden;
   padding: 0;
   @include tablet {
     max-width: 680px;
   }
   @include desktop {
-    max-width: 70vw;
+    max-width: 90vw;
     padding: 40px;
     margin: auto;
   }
+}
+
+.block_list {
+  display: block;
+  margin: 46px auto 28px;
 }
 
 .logo {
@@ -24,10 +29,12 @@
 
 .dark {
   color: #1c1c1c;
+  font-size: 44px;
 }
 
 .digital {
   color: #fff;
+  font-size: 44px;
 }
 
 .description {
@@ -43,13 +50,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .text_head {
   padding: 0;
   margin: 0 10px 0;
-  @include headline-screen(#fff);
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .description_none {

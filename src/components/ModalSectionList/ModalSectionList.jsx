@@ -14,6 +14,9 @@ const variants = {
   },
   exit: {
     opacity: 0,
+    transition: {
+      delay: 0,
+    },
   },
 };
 

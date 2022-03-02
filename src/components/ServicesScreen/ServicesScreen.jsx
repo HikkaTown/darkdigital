@@ -3,6 +3,8 @@ import s from "./ServicesScreen.module.scss";
 import cs from "classnames";
 import LogoComponent from "../uikit/LogoComponent/LogoComponent";
 import ServicesButton from "../uikit/ServicesButton/ServicesButton";
+import Header from "../uikit/Header/Header";
+import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 export default function ServicesScreen({
   classPanel,
   dataXpos,
@@ -16,11 +18,10 @@ export default function ServicesScreen({
       data-y-pos={dataYpos}
     >
       <div className={s.container}>
-        <LogoComponent
-          classLogo={s.logo}
-          classDark={s.dark}
-          classDigital={s.digital}
-          classDescription={s.description}
+        <Header classDigital={s.dark} />
+        <OpenBlockList
+          className={s.block_list}
+          // onChangePosition={changePosition}
         />
         <div className={s.content}>
           <div className={s.head}>

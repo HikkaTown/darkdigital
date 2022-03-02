@@ -19,7 +19,7 @@
   padding: 0;
   margin: 0;
   font-family: "The Breakdown";
-  text-transform: capitalize;
+  text-transform: none;
   font-size: 44px;
   line-height: 49px;
   @include tablet {
@@ -49,7 +49,7 @@
   margin-right: 20px;
   position: relative;
   @include body3-mobile(#fff);
-  text-transform: capitalize;
+  text-transform: none;
   &::before {
     content: "";
     display: block;

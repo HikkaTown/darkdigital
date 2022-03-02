@@ -42,15 +42,15 @@ export default function ConctactScree({
           <div className={s.card}>
             <div className={s.row}>
               <LazyImageWrapper
-                src="assets/phone.svg"
-                className={[s.icon]}
-                wrapperClass={s.icon_wrapper}
+                src="assets/email.svg"
+                className={[s.icon_mail]}
+                wrapperClass={s.icon_mail_wrapper}
               />
-              <p className={s.name}>Телефон</p>
+              <p className={s.name}>E-mail</p>
             </div>
             <div className={s.row}>
-              <a href="to:+7000000" className={s.link}>
-                +7 (000)000-00-00
+              <a href="mailto:email@sd.ru" className={cs(s.link, s.link_email)}>
+                email@sd.ru
               </a>
             </div>
           </div>
@@ -86,17 +86,18 @@ export default function ConctactScree({
             <div className={s.row}>
               <LazyImageWrapper
                 src="assets/time.svg"
-                className={[s.icon]}
-                wrapperClass={s.icon_wrapper}
+                className={[s.icon_time]}
+                wrapperClass={s.icon_time_wrapper}
               />
               <p className={s.name} style={{ marginLeft: "10px" }}>
                 Режим работы:
               </p>
             </div>
             <div className={s.row}>
-              <a href="to:+7000000" className={s.link}>
-                +7 (000)000-00-00
-              </a>
+              <div className={s.time_info}>
+                <p className={s.days}>Пн. - Пт.:</p>
+                <p className={s.times}>с 10:00 до 19:00</p>
+              </div>
             </div>
           </div>
         </div>

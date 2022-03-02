@@ -28,13 +28,14 @@
   font-size: 12px;
   line-height: 16px;
   text-align: center;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
+  height: 100px;
 }
 
 .card {
@@ -45,6 +46,8 @@
   width: 100vw;
   margin-right: 20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
   &:nth-child(2n) {
     margin-right: 0;
   }
@@ -53,11 +56,25 @@
 .row {
   display: flex;
   align-items: center;
+  &:nth-child(2n) {
+    margin-top: auto;
+  }
 }
 
 .icon {
   height: 17px;
   width: 15px;
+}
+
+.icon_mail {
+  max-width: 22px;
+  width: 100vw;
+  height: 15px;
+  &_wrapper {
+    max-width: 22px;
+    width: 100vw;
+    height: 15px;
+  }
 }
 
 .icon_wrapper {
@@ -82,6 +99,36 @@
   width: 100vw;
 }
 
+.icon_time {
+  height: 15px;
+  max-width: 15px;
+  width: 100vw;
+  &_wrapper {
+    height: 15px;
+    max-width: 15px;
+    width: 100vw;
+  }
+}
+
+.days {
+  padding: 0;
+  margin: 0;
+}
+
+.time_info {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 5px;
+  text-transform: none;
+}
+
+.times {
+  padding: 0;
+  margin: 0;
+}
+
 .messager_link {
   margin-right: 15px;
   transition: 0.3s;
@@ -96,6 +143,7 @@
 .name {
   padding: 0;
   margin: 0 0 0 15px;
+  text-transform: none;
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 12px;
@@ -113,4 +161,11 @@
   line-height: 28px;
   color: #fff;
   margin-top: 12px;
+  &_email {
+    font-family: "Montserrat";
+    text-transform: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+  }
 }

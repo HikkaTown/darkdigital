@@ -10,10 +10,12 @@ export default function ContentContainer() {
   const [posY, setPosY] = useState(0);
 
   const handleNav = (dataXpos, dataYpos) => {
-    const newPosX = posX + dataXpos;
-    const newPosY = posY + dataYpos;
-    setPosX(newPosX);
-    setPosY(newPosY);
+    // const newPosX = posX + dataXpos;
+    // const newPosY = posY + dataYpos;
+    // setPosX(newPosX);
+    // setPosY(newPosY);
+    setPosX(dataXpos);
+    setPosY(dataYpos);
   };
   return (
     <section className={s.site_wrap}>

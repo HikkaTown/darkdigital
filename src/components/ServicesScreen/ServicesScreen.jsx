@@ -18,7 +18,7 @@ export default function ServicesScreen({
       data-y-pos={dataYpos}
     >
       <div className={s.container}>
-        <Header classDigital={s.dark} />
+        <Header classDigital={s.dark_logo} />
         <OpenBlockList
           className={s.block_list}
           // onChangePosition={changePosition}

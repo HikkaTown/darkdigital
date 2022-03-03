@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./MainButton.module.scss";
 import cs from "classnames";
 import ModalFeedback from "../../ModalFeedback/ModalFeedback";
+import { AnimatePresence } from "framer-motion";
 export default function MainButton({ text, onClick, className }) {
   const [isOpened, setIsOpened] = useState(false);
 
@@ -14,9 +15,11 @@ export default function MainButton({ text, onClick, className }) {
       <button onClick={handlerOpened} className={cs(s.btn, className)}>
         {text}
       </button>
-      {isOpened && (
-        <ModalFeedback isOpened={isOpened} onClose={handlerOpened} />
-      )}
+      <AnimatePresence>
+        {isOpened && (
+          <ModalFeedback isOpened={isOpened} onClose={handlerOpened} />
+        )}
+      </AnimatePresence>
     </>
   );
 }

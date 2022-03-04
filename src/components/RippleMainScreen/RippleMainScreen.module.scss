@@ -25,7 +25,7 @@
 
 .ripple_1 {
   animation: ripple 5s linear infinite;
-  box-shadow: 0px 0px 70px rgba(0, 87, 255, 0.24);
+  box-shadow: 0px 0px 70px rgba(0, 87, 255, 0.4);
 }
 .ripple_2 {
   animation: ripple 5s linear infinite 0.5s;
@@ -33,22 +33,22 @@
 }
 .ripple_3 {
   animation: ripple 5s linear infinite 1.75s;
-  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.28);
+  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.4);
 }
 
 .ripple_4 {
   animation: ripple 5s linear infinite 2.5s;
-  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.07);
+  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.4);
 }
 
 .ripple_5 {
   animation: ripple 5s linear infinite 3.25s;
-  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.15);
+  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.4);
 }
 
 .ripple_6 {
   animation: ripple 5s linear infinite 4s;
-  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.15);
+  box-shadow: 0px 0px 50px rgba(0, 87, 255, 0.4);
 }
 
 @keyframes ripple {

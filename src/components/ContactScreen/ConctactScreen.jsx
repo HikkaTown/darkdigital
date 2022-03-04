@@ -4,7 +4,7 @@ import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import s from "./ContactScreen.module.scss";
 import cs from "classnames";
-export default function ConctactScree({
+export default function ConctactScreen({
   classPanel,
   dataXpos,
   dataYpos,

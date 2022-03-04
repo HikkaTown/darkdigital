@@ -1,0 +1,78 @@
+.page {
+  overflow: auto;
+}
+
+.container {
+  max-width: calc(100% - 30px);
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.block_list {
+  display: block;
+  margin: 46px auto 28px;
+}
+
+.head {
+  text-align: center;
+  padding: 0;
+  margin: 0 0 15px 0;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 34px;
+  color: #fff;
+}
+
+.benefit_list {
+  max-width: calc(100% - 42px);
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.icon_bar {
+}
+
+.item {
+}
+
+.icon {
+  max-width: 37px;
+  width: 100vw;
+  height: 33px;
+  margin: auto;
+}
+
+.icon_wrapper {
+  max-width: 62px;
+  width: 100vw;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 50%;
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    max-width: 82px;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    height: 82px;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    content: "";
+    display: block;
+    height: 50px;
+    max-width: 2px;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}

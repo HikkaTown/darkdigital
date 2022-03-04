@@ -18,10 +18,10 @@ export default function ServicesScreen({
       data-y-pos={dataYpos}
     >
       <div className={s.container}>
-        <Header classDigital={s.dark_logo} />
+        <Header classDigital={s.dark_logo} classDark={s.white_logo} />
         <OpenBlockList
           className={s.block_list}
-          // onChangePosition={changePosition}
+          onChangePosition={changePosition}
         />
         <div className={s.content}>
           <div className={s.head}>
@@ -33,11 +33,16 @@ export default function ServicesScreen({
               classDescription={s.description_none}
             />
           </div>
-          <p className={s.content_description}>
+          {/* <p className={s.content_description}>
             Мы разработываем сайты любого типа. От лендинга до
             мультифункциональных информационных порталов.
-          </p>
+          </p> */}
           <div className={s.services_list}>
+            <ServicesButton text={"Аудит сайта"} className={s.btn} />
+            <ServicesButton text={"Аудит сайта"} className={s.btn} />
+            <ServicesButton text={"Аудит сайта"} className={s.btn} />
+            <ServicesButton text={"Аудит сайта"} className={s.btn} />
+            <ServicesButton text={"Аудит сайта"} className={s.btn} />
             <ServicesButton text={"Аудит сайта"} className={s.btn} />
             <ServicesButton text={"Аудит сайта"} className={s.btn} />
             <ServicesButton text={"Аудит сайта"} className={s.btn} />

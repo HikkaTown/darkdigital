@@ -44,7 +44,7 @@ export const positions = [
     arrowSecondClass: s.arrow_right,
   },
   {
-    title: "Приемущества",
+    title: "О нас",
     xPos: 1,
     yPos: -1,
     className: s.nav_down_left,
@@ -60,7 +60,7 @@ export const positions = [
     arrowSecondClass: s.arrow_down,
   },
   {
-    title: "Партнеры",
+    title: "Преимущества",
     xPos: -1,
     yPos: -1,
     className: s.nav_down_right,

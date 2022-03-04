@@ -2,9 +2,11 @@ import React, { useRef, useState } from "react";
 import MainScreen from "../MainScreen/MainScreen";
 import s from "./ContentContainer.module.scss";
 import cs from "classnames";
-import ConctactScree from "../ContactScreen/ConctactScree";
+import ConctactScreen from "../ContactScreen/ConctactScreen";
 import NavigationBlock from "../NavigationBlock/NavigationBlock";
 import ServicesScreen from "../ServicesScreen/ServicesScreen";
+import AboutUsScreen from "../AboutUsScreen/AboutUsScreen";
+import BenefitsScreen from "../BenefitsScreen/BenefitsScreen";
 export default function ContentContainer() {
   const [posX, setPosX] = useState(0);
   const [posY, setPosY] = useState(0);
@@ -36,7 +38,7 @@ export default function ContentContainer() {
           dataYpos={0}
           changePosition={handleNav}
         />
-        <ConctactScree
+        <ConctactScreen
           classPanel={s.panel}
           dataXpos={1}
           dataYpos={1}
@@ -46,6 +48,18 @@ export default function ContentContainer() {
           classPanel={s.panel}
           dataXpos={0}
           dataYpos={1}
+          changePosition={handleNav}
+        />
+        <AboutUsScreen
+          classPanel={s.panel}
+          dataXpos={-1}
+          dataYpos={-1}
+          changePosition={handleNav}
+        />
+        <BenefitsScreen
+          classPanel={s.panel}
+          dataXpos={1}
+          dataYpos={-1}
           changePosition={handleNav}
         />
       </div>

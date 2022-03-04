@@ -21,7 +21,7 @@ export default function AboutUsScreen({
           className={s.block_list}
           onChangePosition={changePosition}
         />
-        <p className={s.head}>Контакты</p>
+        <p className={s.head}>О нас</p>
         <div className={s.content}>
           <p className={s.content_text}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,

@@ -1,12 +1,11 @@
 .page {
-  overflow: scroll;
+  overflow: auto !important;
 }
 
 .container {
   max-width: calc(100% - 30px);
   width: 100vw;
   margin: 0 auto;
-  overflow: scroll;
 }
 
 .block_list {

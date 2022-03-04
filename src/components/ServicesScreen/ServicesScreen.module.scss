@@ -1,6 +1,6 @@
 .page {
   background-color: #1c1c1c;
-  overflow: auto;
+  overflow: auto !important;
 }
 .container {
   max-width: calc(100% - 30px);

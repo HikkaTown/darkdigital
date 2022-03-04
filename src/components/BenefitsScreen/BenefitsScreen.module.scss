@@ -39,7 +39,7 @@
   margin-bottom: 45px;
   &:last-of-type {
     align-items: flex-start;
-    .circl {
+    .icon_wrapper {
       &::after {
         display: none;
       }
@@ -48,10 +48,15 @@
 }
 
 .icon {
+  transition: 0.5s;
   max-width: 37px;
   width: 100vw;
   height: 33px;
   margin: auto;
+  transform: scale(1);
+  &_deactive {
+    transform: scale(0);
+  }
 }
 
 .icon_wrapper {
@@ -64,6 +69,7 @@
   flex-direction: column;
   background-color: #fff;
   border-radius: 50%;
+  transition: 0.5s;
   &::before {
     position: absolute;
     content: "";
@@ -73,6 +79,7 @@
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     height: 82px;
+    animation: animateCircl 2s linear infinite;
   }
   &::after {
     position: absolute;
@@ -85,6 +92,16 @@
     max-width: 2px;
     width: 100vw;
     background-color: rgba(255, 255, 255, 0.3);
+  }
+  &_deactive {
+    height: 14px;
+    max-width: 14px;
+    width: 100vw;
+    margin-left: 24px;
+    background-color: #c4c4c4;
+    &::before {
+      display: none;
+    }
   }
 }
 
@@ -122,4 +139,18 @@
 
 .text_second {
   margin-left: 57px;
+}
+
+@keyframes animateCircl {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
 }

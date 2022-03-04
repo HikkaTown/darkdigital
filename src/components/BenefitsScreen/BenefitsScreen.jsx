@@ -1,15 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import cs from "classnames";
 import s from "./BenefitsScreen.module.scss";
 import { LazyImageWrapper } from "../LazyImage";
+
+const list = [
+  {
+    id: 1,
+    title: "Поэтапная система оплаты",
+    iconSrc: "/assets/benefits.svg",
+  },
+  {
+    id: 2,
+    title: "Уникальный дизайн",
+    iconSrc: "/assets/benefits.svg",
+  },
+  {
+    id: 3,
+    title: "100 лет гарантии на сайт",
+    iconSrc: "/assets/benefits.svg",
+  },
+  {
+    id: 4,
+    title: "Поддержка сайта 24/7",
+    iconSrc: "/assets/benefits.svg",
+  },
+  {
+    id: 5,
+    title: "Настройка админки под ваши задачи",
+    iconSrc: "/assets/benefits.svg",
+  },
+];
+
 export default function BenefitsScreen({
   changePosition,
   classPanel,
   dataXpos,
   dataYpos,
 }) {
+  const [activeItem, setActiveItem] = useState(1);
+  const handlerSelectItem = (id) => {
+    setActiveItem(id);
+  };
   return (
     <div
       className={cs(classPanel, s.page)}
@@ -26,34 +59,72 @@ export default function BenefitsScreen({
       <p className={s.head}>Преимущества</p>
       <div className={s.benefit_list}>
         <div className={s.icon_bar}>
+          {list.map((item, index) => {
+            return (
+              <span
+                className={s.item}
+                key={index}
+                onClick={() => {
+                  handlerSelectItem(item.id);
+                }}
+              >
+                <LazyImageWrapper
+                  src={item.iconSrc}
+                  className={[
+                    cs(s.icon, activeItem !== item.id ? s.icon_deactive : ""),
+                  ]}
+                  wrapperClass={cs(
+                    s.icon_wrapper,
+                    activeItem !== item.id ? s.icon_wrapper_deactive : ""
+                  )}
+                />
+                <p
+                  className={cs(
+                    s.text,
+                    activeItem !== item.id ? s.text_second : ""
+                  )}
+                >
+                  {item.title}
+                </p>
+              </span>
+            );
+          })}
+          {/* <span className={s.item}>
+            <LazyImageWrapper
+              src="/assets/benefits.svg"
+              className={[s.icon]}
+              wrapperClass={s.icon_wrapper}
+            />
+            <p className={cs(s.text, s.text_second)}>Уникальный дизайн</p>
+          </span>
           <span className={s.item}>
             <LazyImageWrapper
               src="/assets/benefits.svg"
               className={[s.icon]}
               wrapperClass={s.icon_wrapper}
             />
-            <p className={s.text}>Поэтапная система оплаты</p>
-          </span>
-          <span className={s.item}>
-            <span className={s.circl} />
-            <p className={cs(s.text, s.text_second)}>Уникальный дизайн</p>
-          </span>
-          <span className={s.item}>
-            <span className={s.circl} />
             <p className={cs(s.text, s.text_second)}>
               100 лет гарантии на сайт
             </p>
           </span>
           <span className={s.item}>
-            <span className={s.circl} />
+            <LazyImageWrapper
+              src="/assets/benefits.svg"
+              className={[s.icon]}
+              wrapperClass={s.icon_wrapper}
+            />
             <p className={cs(s.text, s.text_second)}>Поддержка сайта 24/7</p>
           </span>
           <span className={s.item}>
-            <span className={s.circl} />
+            <LazyImageWrapper
+              src="/assets/benefits.svg"
+              className={[s.icon]}
+              wrapperClass={s.icon_wrapper}
+            />
             <p className={cs(s.text, s.text_second)}>
               Настройка админки под ваши задачи
             </p>
-          </span>
+          </span> */}
         </div>
       </div>
     </div>

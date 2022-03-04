@@ -46,8 +46,8 @@ export default function ModalSectionList({
                   type="button"
                   className={s.tab}
                   onClick={() => {
-                    onChangePosition(item.xPos, item.yPos);
                     onClose();
+                    onChangePosition(item.xPos, item.yPos);
                   }}
                 >
                   <span className={s.container_btn}>

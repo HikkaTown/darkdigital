@@ -29,7 +29,13 @@ export default function ModalSectionList({
     <Portal>
       <OverlayingPopup isOpened={isOpened} onClose={onClose}>
         <div className={s.container} onClick={onClose}>
-          <motion.div className={s.tabs}>
+          <motion.div
+            className={s.tabs}
+            onClick={(e) => {
+              e.preventDefault();
+              onClose();
+            }}
+          >
             {positions.map((item, index) => {
               return (
                 <motion.button
@@ -39,7 +45,7 @@ export default function ModalSectionList({
                   exit="exit"
                   transition={{
                     duration: +`0.4${index}`,
-                    delay: +`0.9${index}`,
+                    delay: +`0.1${index}`,
                   }}
                   layout="animation"
                   key={index}

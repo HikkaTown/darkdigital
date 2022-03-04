@@ -1,14 +1,17 @@
 .container {
+  display: flex;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
 }
 
 .tabs {
   max-width: calc(100% - 30px);
   width: 100vw;
-  margin: 10vh auto 0;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-bottom: 10vh;
 }
 
 .tab {

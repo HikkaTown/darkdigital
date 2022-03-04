@@ -28,7 +28,7 @@ export default function ModalSectionList({
   return (
     <Portal>
       <OverlayingPopup isOpened={isOpened} onClose={onClose}>
-        <div className={s.container}>
+        <div className={s.container} onClick={onClose}>
           <motion.div className={s.tabs}>
             {positions.map((item, index) => {
               return (

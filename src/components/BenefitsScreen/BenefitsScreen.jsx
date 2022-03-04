@@ -32,6 +32,27 @@ export default function BenefitsScreen({
               className={[s.icon]}
               wrapperClass={s.icon_wrapper}
             />
+            <p className={s.text}>Поэтапная система оплаты</p>
+          </span>
+          <span className={s.item}>
+            <span className={s.circl} />
+            <p className={cs(s.text, s.text_second)}>Уникальный дизайн</p>
+          </span>
+          <span className={s.item}>
+            <span className={s.circl} />
+            <p className={cs(s.text, s.text_second)}>
+              100 лет гарантии на сайт
+            </p>
+          </span>
+          <span className={s.item}>
+            <span className={s.circl} />
+            <p className={cs(s.text, s.text_second)}>Поддержка сайта 24/7</p>
+          </span>
+          <span className={s.item}>
+            <span className={s.circl} />
+            <p className={cs(s.text, s.text_second)}>
+              Настройка админки под ваши задачи
+            </p>
           </span>
         </div>
       </div>

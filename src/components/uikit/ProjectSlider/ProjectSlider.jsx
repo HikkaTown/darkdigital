@@ -1,13 +1,63 @@
 import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
-import s from './ProjectSlider.module.scss';
-import cs from 'classnames';
+import s from "./ProjectSlider.module.scss";
+import cs from "classnames";
+import { LazyBackgroundImage } from "../../LazyBackgroundImage";
+import { LazyImageWrapper } from "../../LazyImage/LazyImage";
+
+const projectData = [
+  {
+    id: 1,
+    imagePc: "",
+    imageTab: "",
+    name: "REVISUAL",
+    status: "prouct",
+    nameColor: "white",
+    imageMob: "project/mob/1.jpg",
+    presentationImage: "",
+  },
+  {
+    id: 2,
+    imagePc: "",
+    imageTab: "",
+    name: "Knightsbridge Private Park",
+    status: "prouct",
+    nameColor: "black",
+    imageMob: "project/mob/2.jpg",
+    presentationImage: "",
+  },
+  {
+    id: 3,
+    imagePc: "",
+    imageTab: "",
+    name: "АКК",
+    nameColor: "white",
+    status: "prouct",
+    imageMob: "project/mob/3.jpg",
+    presentationImage: "",
+  },
+  {
+    id: 4,
+    imagePc: "",
+    imageTab: "",
+    name: "Арсенал",
+    nameColor: "black",
+    status: "prouct",
+    imageMob: "project/mob/4.jpg",
+    presentationImage: "",
+  },
+];
+
 export default function ProjectSlider({ className }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
-
+    slides: {
+      origin: "center",
+      perView: "auto",
+      spacing: 15,
+    },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
@@ -17,13 +67,24 @@ export default function ProjectSlider({ className }) {
   });
   return (
     <>
-      <div className={cs('navigation-wrapper', s.wrapper)}>
-        <div ref={sliderRef} className={cs('keen-slider', s.slider)}>
-          <div className={cs('keen-slider__slide', s.slide)}>1</div>
-          <div className={cs('keen-slider__slide', s.slide)}>1</div>
-          <div className={cs('keen-slider__slide', s.slide)}>1</div>
-          <div className={cs('keen-slider__slide', s.slide)}>1</div>
-          <div className={cs('keen-slider__slide', s.slide)}>1</div>
+      <div className={cs("navigation-wrapper", s.wrapper)}>
+        <div ref={sliderRef} className={cs("keen-slider", s.slider)}>
+          {projectData.map((item) => {
+            return (
+              <div key={item.id} className={cs("keen-slider__slide", s.slide)}>
+                <LazyImageWrapper
+                  className={[s.image]}
+                  wrapperClass={s.image_wrapper}
+                  srcMobile={item.imageMob}
+                  alt={item.name}
+                />
+                <h3 className={s.card_name} style={{ color: item.nameColor }}>
+                  {item.name}
+                </h3>
+                <button className={s.btn}>Подробнее</button>
+              </div>
+            );
+          })}
         </div>
         {/* {loaded && instanceRef.current && (
           <>
@@ -52,7 +113,7 @@ export default function ProjectSlider({ className }) {
 }
 
 function Arrow(props) {
-  const disabeld = props.disabled ? " arrow--disabled" : ""
+  const disabeld = props.disabled ? " arrow--disabled" : "";
   return (
     // <svg
     //   onClick={props.onClick}
@@ -69,5 +130,6 @@ function Arrow(props) {
     //     <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
     //   )}
     // </svg>
-  )
+    <></>
+  );
 }

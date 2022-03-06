@@ -3,6 +3,7 @@ import s from "./ProjectScreen.module.scss";
 import cs from "classnames";
 import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
+import ProjectSlider from "../uikit/ProjectSlider/ProjectSlider";
 export default function ProjectScreen({
   classPanel,
   dataXpos,
@@ -23,6 +24,7 @@ export default function ProjectScreen({
         />
         <p className={s.head}>Наши сервисы и проекты</p>
       </div>
+      <ProjectSlider />
     </div>
   );
 }

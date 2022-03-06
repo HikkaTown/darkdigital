@@ -1,7 +1,70 @@
 .wrapper {
+  width: 100%;
 }
-.sldier {
+.slider {
+  padding: 30px 15px 20px;
+  display: flex;
+  overflow: visible;
+  @include tablet {
+    $padding: calc(100% - 680px);
+    padding-left: calc($padding / 2);
+    padding-right: calc($padding / 2);
+  }
+  @include desktop {
+    $padding: calc(100% - 1192px);
+    padding-left: calc($padding / 2);
+    padding-right: calc($padding / 2);
+  }
 }
 
 .slide {
+  position: relative;
+  background-color: #fff;
+  max-height: 318px !important;
+  height: 100vh !important;
+  max-width: 259px !important;
+  width: 100vw !important;
+  min-width: 259px !important;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image {
+}
+
+.image_wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.card_name {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 89px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.btn {
+  @include buttonDefault;
+  position: absolute;
+  bottom: 29px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  width: calc(100% - 30px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 0;
+  border-radius: 5px;
+  background-color: #0057ff;
 }

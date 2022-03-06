@@ -7,6 +7,7 @@ import NavigationBlock from "../NavigationBlock/NavigationBlock";
 import ServicesScreen from "../ServicesScreen/ServicesScreen";
 import AboutUsScreen from "../AboutUsScreen/AboutUsScreen";
 import BenefitsScreen from "../BenefitsScreen/BenefitsScreen";
+import ProjectScreen from "../ProjectScreen/ProjectScreen";
 export default function ContentContainer() {
   const [posX, setPosX] = useState(0);
   const [posY, setPosY] = useState(0);
@@ -60,6 +61,12 @@ export default function ContentContainer() {
           classPanel={s.panel}
           dataXpos={1}
           dataYpos={-1}
+          changePosition={handleNav}
+        />
+        <ProjectScreen
+          classPanel={s.panel}
+          dataXpos={-1}
+          dataYpos={1}
           changePosition={handleNav}
         />
       </div>

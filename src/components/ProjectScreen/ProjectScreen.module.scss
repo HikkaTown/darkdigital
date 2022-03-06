@@ -1,0 +1,35 @@
+.page {
+  background-color: #1c1c1c;
+  overflow: auto !important;
+}
+.container {
+  max-width: calc(100% - 30px);
+  width: 100vw;
+  height: 100%;
+  margin: 0 auto;
+  // overflow: hidden;
+  padding: 0;
+  @include tablet {
+    max-width: 680px;
+  }
+  @include desktop {
+    max-width: 90vw;
+    padding: 40px;
+    margin: auto;
+  }
+}
+
+.block_list {
+  display: block;
+  margin: 46px auto 28px;
+}
+
+.head {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 34px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}

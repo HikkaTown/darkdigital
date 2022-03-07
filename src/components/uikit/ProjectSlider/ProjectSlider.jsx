@@ -4,6 +4,7 @@ import s from "./ProjectSlider.module.scss";
 import cs from "classnames";
 import { LazyBackgroundImage } from "../../LazyBackgroundImage";
 import { LazyImageWrapper } from "../../LazyImage/LazyImage";
+import ProjectPreviewModal from "../../ProjectPreviewModal/ProjectPreviewModal";
 
 const projectData = [
   {
@@ -14,7 +15,7 @@ const projectData = [
     status: "prouct",
     nameColor: "white",
     imageMob: "project/mob/1.jpg",
-    presentationImage: "",
+    presentationImage: "project/presentation/1.jpg",
   },
   {
     id: 2,
@@ -50,7 +51,19 @@ const projectData = [
 
 export default function ProjectSlider({ className }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isOpened, setIsOpened] = useState(false);
+  const [src, setSrc] = useState("");
   const [loaded, setLoaded] = useState(false);
+
+  const handleClose = () => {
+    setIsOpened((prev) => !prev);
+  };
+
+  const handleOpenModal = (src) => {
+    setSrc((prev) => src);
+    setIsOpened((prev) => !prev);
+  };
+
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
     slides: {
@@ -81,7 +94,14 @@ export default function ProjectSlider({ className }) {
                 <h3 className={s.card_name} style={{ color: item.nameColor }}>
                   {item.name}
                 </h3>
-                <button className={s.btn}>Подробнее</button>
+                <button
+                  className={s.btn}
+                  onClick={() => {
+                    handleOpenModal(item.presentationImage);
+                  }}
+                >
+                  Подробнее
+                </button>
               </div>
             );
           })}
@@ -108,6 +128,13 @@ export default function ProjectSlider({ className }) {
           </>
         )} */}
       </div>
+      {isOpened && (
+        <ProjectPreviewModal
+          isOpened={isOpened}
+          onClose={handleClose}
+          src={src}
+        />
+      )}
     </>
   );
 }

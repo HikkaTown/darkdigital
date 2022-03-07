@@ -1,0 +1,18 @@
+.overlay {
+  overflow: scroll;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container {
+  min-height: 100%;
+  width: 90vw;
+}
+
+.image {
+  width: 100%;
+}
+
+.image_wrapper {
+}

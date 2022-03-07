@@ -36,7 +36,7 @@ export const positions = [
   { title: "Главная", xPos: 0, yPos: 0 },
 
   {
-    title: "Вопрос ответ",
+    title: "Почему мы",
     xPos: -1,
     yPos: 0,
     className: s.nav_right,

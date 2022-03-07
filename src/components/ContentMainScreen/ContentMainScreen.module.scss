@@ -25,7 +25,8 @@
 
   @include tablet {
     margin-bottom: 30px;
-    @include headline1(#fff);
+    font-size: 40px;
+    line-height: 48px;
   }
   @include desktop {
     max-width: 810px;
@@ -42,7 +43,8 @@
   text-transform: none;
   margin-bottom: 30px;
   @include tablet {
-    @include body1(#fff);
+    font-size: 16px;
+    line-height: 24px;
   }
   @include desktop {
     max-width: 710px;
@@ -73,5 +75,11 @@
     &::before {
       bottom: 0;
     }
+  }
+  @include tablet {
+    width: auto;
+    padding: 19px 33px;
+    font-size: 16px;
+    line-height: 22px;
   }
 }

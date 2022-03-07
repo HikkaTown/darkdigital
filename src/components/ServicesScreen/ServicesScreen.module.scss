@@ -1,6 +1,10 @@
 .page {
   background-color: #1c1c1c;
   overflow: auto !important;
+  padding: 20px;
+  @include tablet {
+    background-color: #0057ff;
+  }
 }
 .container {
   max-width: calc(100% - 30px);
@@ -30,6 +34,9 @@
 
 .dark_logo {
   color: #0057ff;
+  @include tablet {
+    color: #1c1c1c;
+  }
 }
 
 .white_logo {
@@ -44,6 +51,11 @@
 .digital {
   color: #0057ff;
   font-size: 30px;
+  @include tablet {
+    font-size: 45px;
+    line-height: 45px;
+    color: #fff;
+  }
 }
 
 .description {
@@ -64,7 +76,7 @@
 
 .text_head {
   padding: 0;
-  margin: 0 10px 0;
+  margin: 0 10px 0 0;
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 20px;
@@ -83,6 +95,15 @@
   @include body1-mobile(#fff);
   text-transform: none;
   text-align: center;
+  display: none;
+  @include tablet {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    max-width: 544px;
+    margin: 0 auto 24px;
+  }
   @include desktop {
     @include body1(#fff);
     max-width: 630px;
@@ -99,7 +120,7 @@
   justify-content: space-between;
   overflow: auto;
   @include tablet {
-    justify-content: flex-start;
+    justify-content: space-between;
     max-width: 680px;
   }
   @include desktop {
@@ -122,5 +143,9 @@
   &:active {
     background-color: #0057ff;
     color: #fff;
+  }
+  @include tablet {
+    max-width: calc(33% - 7.5px);
+    margin-bottom: 15px;
   }
 }

@@ -1,5 +1,6 @@
 .page {
   overflow: auto;
+  padding: 20px;
 }
 
 .container {
@@ -28,9 +29,17 @@
   max-width: calc(100% - 42px);
   width: 100vw;
   margin: 0 auto;
+  @include tablet {
+    max-width: 680px;
+    margin-top: 100px;
+  }
 }
 
 .icon_bar {
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .item {
@@ -39,11 +48,34 @@
   margin-bottom: 45px;
   &:last-of-type {
     align-items: flex-start;
+    @include tablet {
+      align-items: center;
+    }
     .icon_wrapper {
       &::after {
         display: none;
       }
     }
+  }
+  @include tablet {
+    margin-bottom: 0;
+    position: relative;
+    &:nth-child(even) {
+      flex-direction: column-reverse;
+      .text {
+        top: 70px;
+      }
+    }
+    &:nth-child(odd) {
+      flex-direction: column;
+      .text {
+        top: -70px;
+        max-width: 170px;
+        width: 100vw;
+      }
+    }
+    justify-content: center;
+    width: 100%;
   }
 }
 
@@ -60,6 +92,7 @@
 }
 
 .icon_wrapper {
+  cursor: pointer;
   max-width: 62px;
   width: 100vw;
   height: 62px;
@@ -70,6 +103,7 @@
   background-color: #fff;
   border-radius: 50%;
   transition: 0.5s;
+
   &::before {
     position: absolute;
     content: "";
@@ -92,6 +126,16 @@
     max-width: 2px;
     width: 100vw;
     background-color: rgba(255, 255, 255, 0.3);
+    @include tablet {
+      height: 2px;
+      max-width: 100px;
+      width: 100vw;
+      bottom: auto;
+      top: 50%;
+      left: auto;
+      right: 0;
+      transform: translateX(100%) translateY(-50%);
+    }
   }
   &_deactive {
     height: 14px;
@@ -101,6 +145,13 @@
     background-color: #c4c4c4;
     &::before {
       display: none;
+    }
+    @include tablet {
+      margin-left: 0;
+      &::after {
+        transition: 0.3s;
+        max-width: 122px;
+      }
     }
   }
 }
@@ -112,6 +163,11 @@
   line-height: 18px;
   color: rgba(255, 255, 255, 0.8);
   padding: 0;
+  @include tablet {
+    margin-left: 0;
+    text-align: center;
+    position: absolute;
+  }
 }
 
 .circl {
@@ -134,11 +190,27 @@
     max-width: 2px;
     width: 100vw;
     background-color: rgba(255, 255, 255, 0.3);
+    @include tablet {
+      height: 2px;
+      max-width: 100px;
+      width: 100vw;
+      bottom: auto;
+      top: 50%;
+      left: auto;
+      right: 0;
+      transform: translateX(100%) translateY(-50%);
+    }
+  }
+  @include tablet {
+    margin-left: 0;
   }
 }
 
 .text_second {
   margin-left: 57px;
+  @include tablet {
+    margin-left: 0;
+  }
 }
 
 @keyframes animateCircl {

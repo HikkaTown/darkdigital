@@ -1,7 +1,18 @@
+.page {
+  overflow: auto;
+  padding: 20px;
+  @include tablet {
+    background: linear-gradient(to right, #0057ff 50%, #1c1c1c 50%);
+  }
+}
+
 .container {
   max-width: calc(100% - 30px);
   width: 100vw;
   margin: 0 auto;
+  @include tablet {
+    max-width: 680px;
+  }
 }
 
 .block_list {
@@ -17,6 +28,7 @@
   font-weight: bold;
   font-size: 20px;
   line-height: 34px;
+  text-transform: uppercase;
   color: #fff;
 }
 
@@ -25,8 +37,8 @@
   margin: 0;
   font-family: "Montserrat";
   font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 22px;
   text-align: center;
   text-transform: none;
 }
@@ -36,6 +48,10 @@
   flex-wrap: wrap;
   margin-top: 20px;
   height: 100px;
+  margin: 20px auto 0;
+  @include tablet {
+    max-width: 680px;
+  }
 }
 
 .card {
@@ -50,6 +66,20 @@
   flex-direction: column;
   &:nth-child(2n) {
     margin-right: 0;
+  }
+  @include tablet {
+    max-width: 246px;
+    border-radius: 0;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    @include hover {
+      box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
+      background-color: #1c1c1c;
+    }
+    &:active {
+      box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
+      background-color: #1c1c1c;
+    }
   }
 }
 
@@ -167,5 +197,17 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 22px;
+  }
+}
+
+.dark {
+  @include tablet {
+    color: #1c1c1c;
+  }
+}
+
+.digital {
+  @include tablet {
+    color: #fff;
   }
 }

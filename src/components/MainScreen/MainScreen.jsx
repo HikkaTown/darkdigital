@@ -19,7 +19,11 @@ export default function MainScreen({
   changePosition,
 }) {
   return (
-    <div className={cs(classPanel)} data-x-pos={dataXpos} data-y-pos={dataYpos}>
+    <div
+      className={cs(classPanel, s.page)}
+      data-x-pos={dataXpos}
+      data-y-pos={dataYpos}
+    >
       <div className={s.container}>
         <Header />
         <OpenBlockList

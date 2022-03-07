@@ -2,6 +2,10 @@
   background-color: #1c1c1c;
   overflow: auto !important;
   padding: 20px;
+  @include tablet {
+    background: linear-gradient(to right, #1c1c1c 50%, #0057ff 50%);
+    padding-bottom: 50px;
+  }
 }
 .container {
   max-width: calc(100% - 30px);
@@ -9,7 +13,8 @@
   margin: 0 auto;
   padding: 0;
   @include tablet {
-    max-width: 680px;
+    max-width: 100%;
+    // width: 100%;
   }
   @include desktop {
     max-width: 90vw;

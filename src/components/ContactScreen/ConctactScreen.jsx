@@ -11,9 +11,13 @@ export default function ConctactScreen({
   changePosition,
 }) {
   return (
-    <div className={classPanel} data-x-pos={dataXpos} data-y-pos={dataYpos}>
+    <div
+      className={cs(classPanel, s.page)}
+      data-x-pos={dataXpos}
+      data-y-pos={dataYpos}
+    >
       <div className={s.container}>
-        <Header />
+        <Header classDark={s.dark} classDigital={s.digital} />
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}

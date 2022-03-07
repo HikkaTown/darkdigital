@@ -2,6 +2,7 @@
   background-color: #1c1c1c;
   overflow: auto !important;
   padding: 20px;
+  height: 120vh;
   @include tablet {
     background: linear-gradient(to right, #1c1c1c 50%, #0057ff 50%);
     padding-bottom: 50px;

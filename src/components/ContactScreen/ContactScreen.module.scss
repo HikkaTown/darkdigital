@@ -1,6 +1,7 @@
 .page {
   overflow: auto;
   padding: 20px;
+  height: 120vh;
   @include tablet {
     background: linear-gradient(to right, #0057ff 50%, #1c1c1c 50%);
   }

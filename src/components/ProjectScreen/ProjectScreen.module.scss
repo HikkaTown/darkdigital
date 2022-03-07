@@ -1,13 +1,12 @@
 .page {
   background-color: #1c1c1c;
   overflow: auto !important;
+  padding: 20px;
 }
 .container {
   max-width: calc(100% - 30px);
   width: 100vw;
-  // height: 100%;
   margin: 0 auto;
-  // overflow: hidden;
   padding: 0;
   @include tablet {
     max-width: 680px;

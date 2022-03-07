@@ -1,8 +1,9 @@
 .wrapper {
   width: 100%;
+  position: relative;
 }
 .slider {
-  padding: 30px 15px 20px;
+  padding: 30px 15px 70px;
   display: flex;
   overflow: visible;
   @include tablet {
@@ -27,6 +28,11 @@
   min-width: 259px !important;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.5);
+  @include tablet {
+    max-height: 358px !important;
+    max-width: 642px !important;
+    min-width: 642px !important;
+  }
 }
 
 .image {
@@ -50,6 +56,13 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
+  @include tablet {
+    left: 30px;
+    transform: translateX(0);
+    max-width: 370px;
+    bottom: 40px;
+    text-align: left;
+  }
 }
 
 .btn {
@@ -66,5 +79,44 @@
   transform: translateX(-50%);
   padding: 12px 0;
   border-radius: 5px;
+  transition: 0.3s;
   background-color: #0057ff;
+  &:active {
+    background-color: #013192;
+  }
+  @include tablet {
+    max-width: 250px;
+    margin-right: 0;
+    left: auto;
+    transform: translateX(0);
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+.arrows {
+  bottom: -40px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow_btns {
+  display: flex;
+  align-items: center;
+}
+
+.finger_ico {
+  width: 29.15px;
+  height: 63.83px;
+  &_wrapper {
+    width: 29.15px;
+    height: 63.83px;
+    margin-left: 10px;
+  }
 }

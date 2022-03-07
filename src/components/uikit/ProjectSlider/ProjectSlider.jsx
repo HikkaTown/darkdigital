@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import s from "./ProjectSlider.module.scss";
 import cs from "classnames";
-import { LazyBackgroundImage } from "../../LazyBackgroundImage";
 import { LazyImageWrapper } from "../../LazyImage/LazyImage";
 import ProjectPreviewModal from "../../ProjectPreviewModal/ProjectPreviewModal";
+import { AnimatePresence } from "framer-motion";
+import ArrowSlider from "../ArrowSlider/ArrowSlider";
 
 const projectData = [
   {
     id: 1,
     imagePc: "",
-    imageTab: "",
+    imageTab: "project/tab/1.jpg",
     name: "REVISUAL",
-    status: "prouct",
+    status: true,
     nameColor: "white",
     imageMob: "project/mob/1.jpg",
     presentationImage: "project/presentation/1.jpg",
@@ -22,7 +23,7 @@ const projectData = [
     imagePc: "",
     imageTab: "",
     name: "Knightsbridge Private Park",
-    status: "prouct",
+    status: true,
     nameColor: "black",
     imageMob: "project/mob/2.jpg",
     presentationImage: "project/presentation/2.jpg",
@@ -33,7 +34,7 @@ const projectData = [
     imageTab: "",
     name: "АКК",
     nameColor: "white",
-    status: "prouct",
+    status: true,
     imageMob: "project/mob/3.jpg",
     presentationImage: "project/presentation/3.jpg",
   },
@@ -43,7 +44,7 @@ const projectData = [
     imageTab: "",
     name: "Арсенал",
     nameColor: "black",
-    status: "prouct",
+    status: false,
     imageMob: "project/mob/4.jpg",
     presentationImage: "",
   },
@@ -66,6 +67,11 @@ export default function ProjectSlider({ className }) {
 
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
+    breakpoints: {
+      "(min-width: 768px)": {
+        rtl: true,
+      },
+    },
     slides: {
       origin: "center",
       perView: "auto",
@@ -88,6 +94,8 @@ export default function ProjectSlider({ className }) {
                 <LazyImageWrapper
                   className={[s.image]}
                   wrapperClass={s.image_wrapper}
+                  src={item.imagePc}
+                  srcTablet={item.imageTab}
                   srcMobile={item.imageMob}
                   alt={item.name}
                 />
@@ -96,67 +104,63 @@ export default function ProjectSlider({ className }) {
                 </h3>
                 <button
                   className={s.btn}
-                  onClick={() => {
-                    handleOpenModal(item.presentationImage);
+                  onClick={(e) => {
+                    if (item.status) {
+                      handleOpenModal(item.presentationImage);
+                    } else {
+                      e.preventDefault();
+                    }
                   }}
                 >
-                  Подробнее
+                  {item.status ? "Подробнее" : "Презентация в разработке"}
                 </button>
               </div>
             );
           })}
         </div>
-        {/* {loaded && instanceRef.current && (
-          <>
-            <Arrow
-              left
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.prev()
-              }
-              disabled={currentSlide === 0}
-            />
+        {loaded && instanceRef.current && (
+          <div className={s.arrows}>
+            <div className={s.arrow_btns}>
+              <Arrow
+                left
+                onClick={(e) =>
+                  e.stopPropagation() || instanceRef.current?.prev()
+                }
+                disabled={currentSlide === 0}
+              />
 
-            <Arrow
-              onClick={(e) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }
-              disabled={
-                currentSlide ===
-                instanceRef.current.track.details.slides.length - 1
-              }
+              <Arrow
+                onClick={(e) =>
+                  e.stopPropagation() || instanceRef.current?.next()
+                }
+                disabled={
+                  currentSlide ===
+                  instanceRef.current.track.details.slides.length - 1
+                }
+              />
+            </div>
+            <LazyImageWrapper
+              src={"assets/finger.svg"}
+              className={[s.finger_ico]}
+              wrapperClass={s.finger_ico_wrapper}
             />
-          </>
-        )} */}
+          </div>
+        )}
       </div>
-      {isOpened && (
-        <ProjectPreviewModal
-          isOpened={isOpened}
-          onClose={handleClose}
-          src={src}
-        />
-      )}
+      <AnimatePresence>
+        {isOpened && (
+          <ProjectPreviewModal
+            isOpened={isOpened}
+            onClose={handleClose}
+            src={src}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }
 
 function Arrow(props) {
   const disabeld = props.disabled ? " arrow--disabled" : "";
-  return (
-    // <svg
-    //   onClick={props.onClick}
-    //   className={`arrow ${
-    //     props.left ? "arrow--left" : "arrow--right"
-    //   } ${disabeld}`}
-    //   xmlns="http://www.w3.org/2000/svg"
-    //   viewBox="0 0 24 24"
-    // >
-    //   {props.left && (
-    //     <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-    //   )}
-    //   {!props.left && (
-    //     <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-    //   )}
-    // </svg>
-    <></>
-  );
+  return <ArrowSlider onClick={props.onClick} position={props.left} />;
 }

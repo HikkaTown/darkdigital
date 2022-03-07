@@ -1,12 +1,23 @@
 import React, { useEffect } from "react";
 import cs from "classnames";
-
 import Portal from "../Portal/Portal";
 import Overlay from "../Overlay/Overlay";
-
+import { motion } from "framer-motion";
 import s from "./OverlayingPopup.module.scss";
 // import SliderCloseButton from "../uikit/SliderCloseButton/SliderCloseButton";
 import useLockBodyScroll from "../../hooks/useLockBodyScroll";
+
+const variatns = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+  hidden2: {
+    opacity: 0,
+  },
+};
 
 const OverlayingPopup = (props) => {
   const {
@@ -28,9 +39,14 @@ const OverlayingPopup = (props) => {
   useLockBodyScroll();
   return (
     <Portal>
-      <div
+      <motion.div
         className={cs(overlayClass, s.container, isOpened && s.opened)}
         role="dialog"
+        transition={{ duration: 0.3, type: "tween" }}
+        initial="hidden"
+        animate="visible"
+        exit="hidden2"
+        variants={variatns}
       >
         <Overlay onClose={onClose} isLeft={isLeft} />
         <div
@@ -46,7 +62,7 @@ const OverlayingPopup = (props) => {
             <SliderCloseButton onClick={onClose} className={classBtnClose} />
           )} */}
         </div>
-      </div>
+      </motion.div>
     </Portal>
   );
 };

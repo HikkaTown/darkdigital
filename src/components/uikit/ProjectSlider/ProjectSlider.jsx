@@ -25,7 +25,7 @@ const projectData = [
     status: "prouct",
     nameColor: "black",
     imageMob: "project/mob/2.jpg",
-    presentationImage: "",
+    presentationImage: "project/presentation/2.jpg",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const projectData = [
     nameColor: "white",
     status: "prouct",
     imageMob: "project/mob/3.jpg",
-    presentationImage: "",
+    presentationImage: "project/presentation/3.jpg",
   },
   {
     id: 4,

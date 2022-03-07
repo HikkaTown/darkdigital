@@ -9,12 +9,10 @@ export default function ProjectPreviewModal({ isOpened, onClose, src }) {
     <Portal>
       <OverlayingPopup isOpened={isOpened} onClose={onClose} child={s.overlay}>
         <div className={s.container}>
-          {/* <LazyImageWrapper
-            src={src}
-            className={[s.image]}
-            wrapperClass={s.image_wrapper}
-            alt="Preview"
-          /> */}
+          <button className={s.close} onClick={onClose}>
+            <span className={s.line} />
+            <span className={s.line} />
+          </button>
           <img src={src} alt="dsds" className={s.image} />
         </div>
       </OverlayingPopup>

@@ -1,9 +1,15 @@
 .page {
   overflow: auto;
   padding: 20px;
-  height: 120vh;
   @include tablet {
     background: linear-gradient(to right, #0057ff 50%, #1c1c1c 50%);
+  }
+}
+
+.canvas {
+  width: 100vw;
+  @include tablet {
+    width: 50vw;
   }
 }
 
@@ -11,14 +17,14 @@
   max-width: calc(100% - 30px);
   width: 100vw;
   margin: 0 auto;
-  @include tablet {
-    max-width: 680px;
-  }
 }
 
 .block_list {
   display: block;
   margin: 46px auto 28px;
+  @include tablet {
+    max-width: 680px;
+  }
 }
 
 .head {

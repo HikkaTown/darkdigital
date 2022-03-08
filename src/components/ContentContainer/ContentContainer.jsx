@@ -9,6 +9,7 @@ import AboutUsScreen from "../AboutUsScreen/AboutUsScreen";
 import BenefitsScreen from "../BenefitsScreen/BenefitsScreen";
 import ProjectScreen from "../ProjectScreen/ProjectScreen";
 import WhyWeScreen from "../WhyWeScreen/WhyWeScreen";
+import CreatingScreen from "../CreatingScreen/CreatingScreen";
 export default function ContentContainer() {
   const [posX, setPosX] = useState(0);
   const [posY, setPosY] = useState(0);
@@ -22,7 +23,7 @@ export default function ContentContainer() {
     setPosY(dataYpos);
   };
   return (
-    <section className={s.site_wrap}>
+    <section className={cs(s.site_wrap)}>
       <NavigationBlock
         changePosition={handleNav}
         currentPosX={posX}
@@ -74,6 +75,12 @@ export default function ContentContainer() {
           classPanel={s.panel}
           dataXpos={1}
           dataYpos={0}
+          changePosition={handleNav}
+        />
+        <CreatingScreen
+          classPanel={s.panel}
+          dataXpos={0}
+          dataYpos={-1}
           changePosition={handleNav}
         />
       </div>

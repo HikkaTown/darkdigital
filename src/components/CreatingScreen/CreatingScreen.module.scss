@@ -1,0 +1,44 @@
+.page {
+  overflow: auto;
+  padding: 20px;
+  @include tablet {
+    background: linear-gradient(to right, #0057ff 50%, #1c1c1c 50%);
+  }
+}
+
+.container {
+  max-width: calc(100% - 30px);
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.block_list {
+  display: block;
+  margin: 46px auto 28px;
+  @include tablet {
+    max-width: 680px;
+  }
+}
+
+.head {
+  text-align: center;
+  padding: 0;
+  margin: 0 0 15px 0;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 34px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: none;
+}

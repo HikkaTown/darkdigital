@@ -3,6 +3,7 @@ import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import cs from "classnames";
 import s from "./CreatingScreen.module.scss";
+import Timeline from "../Timeline/Timeline";
 export default function CreatingScreen({
   classPanel,
   dataXpos,
@@ -22,6 +23,7 @@ export default function CreatingScreen({
           onChangePosition={changePosition}
         />
         <p className={s.head}>Разработка сайтов всех типов</p>
+        <Timeline />
       </div>
     </div>
   );

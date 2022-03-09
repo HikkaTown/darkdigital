@@ -20,6 +20,17 @@
   }
 }
 
+.dark {
+  @include tablet {
+  }
+}
+
+.digital {
+  @include tablet {
+    color: #1c1c1c;
+  }
+}
+
 .head {
   text-align: center;
   padding: 0;

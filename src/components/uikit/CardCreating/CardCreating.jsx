@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import s from "./CardCreating.module.scss";
 import cs from "classnames";
 import { LazyImageWrapper } from "../../LazyImage";
+import useWindowSize from "../../../hooks/useWindowSize";
 export default function CardCreating({ className, data }) {
   const [endPos, setEndPos] = useState(2);
   const {
@@ -13,11 +14,18 @@ export default function CardCreating({ className, data }) {
     discountText,
     price,
   } = data;
+  const size = useWindowSize();
+  useEffect(() => {
+    if (size.width > 768) {
+      setEndPos(promotionList.length);
+    }
+  }, [size]);
+
   return (
     <div className={cs(s.card, className)}>
       <h3 className={s.name_card}>{name}</h3>
       <p className={s.description}>{description}</p>
-      <div className={s.pormotion_list}>
+      <div className={s.promotion_list}>
         <h4 className={s.promotion_head}>{promotionName}</h4>
         <ul className={s.list}>
           {promotionList.slice(0, endPos).map((item, index) => {

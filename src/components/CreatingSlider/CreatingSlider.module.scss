@@ -1,0 +1,25 @@
+.wrapper {
+  // overflow: hidden !important;
+  max-width: 100%;
+  @include desktop {
+    max-width: 612px;
+  }
+}
+
+.slider {
+  @include desktop {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100%;
+  }
+}
+
+.slide {
+  min-width: 100% !important;
+  // width: 100vw !important;
+  @include desktop {
+    // width: 100% !important;
+    // max-width: 100% !important;
+    height: 100%;
+  }
+}

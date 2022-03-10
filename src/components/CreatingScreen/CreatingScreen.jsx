@@ -84,16 +84,18 @@ export default function CreatingScreen({
           onChangePosition={changePosition}
         />
         <p className={s.head}>Разработка сайтов всех типов</p>
-        <Timeline
-          data={list}
-          currentSlide={currentSlide}
-          setCurrentSlide={setCurrentSlide}
-        />
-        <CreatingSlider
-          data={list}
-          currentSlide={currentSlide}
-          setCurrentSlide={setCurrentSlide}
-        />
+        <div className={s.content}>
+          <Timeline
+            data={list}
+            currentSlide={currentSlide}
+            setCurrentSlide={setCurrentSlide}
+          />
+          <CreatingSlider
+            data={list}
+            currentSlide={currentSlide}
+            setCurrentSlide={setCurrentSlide}
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 .page {
   overflow: auto;
   padding-top: 20px;
-  @include tablet {
-    background: linear-gradient(to right, #0057ff 50%, #1c1c1c 50%);
+  @include desktop {
+    background: #0057ff;
   }
 }
 
@@ -11,6 +11,18 @@
   width: 100vw;
   margin: 0 auto;
   padding-bottom: 40px;
+  @include desktop {
+    max-width: 901px;
+  }
+}
+
+.content {
+  @include desktop {
+    display: flex;
+    max-width: 882px;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
 }
 
 .block_list {
@@ -22,13 +34,14 @@
 }
 
 .dark {
-  @include tablet {
+  @include desktop {
+    color: #1c1c1c;
   }
 }
 
 .digital {
-  @include tablet {
-    color: #1c1c1c;
+  @include desktop {
+    color: #fff;
   }
 }
 
@@ -42,6 +55,12 @@
   line-height: 34px;
   text-transform: uppercase;
   color: #fff;
+  @include desktop {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
 }
 
 .title {

@@ -16,6 +16,17 @@ export default function Timeline({ currentSlide, setCurrentSlide, data }) {
       origin: "center",
       spacing: 15,
     },
+    breakpoints: {
+      "(min-width: 1192px)": {
+        vertical: true,
+        loop: false,
+        slides: {
+          spacing: 0,
+          perView: "auto",
+          origin: "auto",
+        },
+      },
+    },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
@@ -30,6 +41,7 @@ export default function Timeline({ currentSlide, setCurrentSlide, data }) {
               key={index}
               className={cs("keen-slider__slide", s.slide)}
               onClick={() => {
+                setCurrentSlide(index);
                 instaceRef.current.moveToIdx(index);
               }}
             >

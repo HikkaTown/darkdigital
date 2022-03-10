@@ -14,6 +14,9 @@ export default function CreatingSlider({
     initial: currentSlide,
     loop: true,
     drag: false,
+    slides: {
+      perView: "auto",
+    },
     // slideChanged(slider) {
     //   setCurrentSlide(slider.track.details.rel);
     // },

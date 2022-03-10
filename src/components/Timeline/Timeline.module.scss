@@ -2,10 +2,25 @@
   padding: 70px 0;
   overflow: hidden;
   height: auto;
+  @include desktop {
+    min-width: 331px;
+    max-width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 37px;
+    display: block;
+  }
 }
 
 .slider {
   overflow: visible !important;
+  @include desktop {
+    flex-direction: column;
+    justify-content: space-between !important;
+    max-width: 331px;
+    max-height: 373px !important;
+    height: 100vh;
+  }
 }
 
 .slide {
@@ -14,6 +29,21 @@
   overflow: visible !important;
   top: 24px;
   text-align: center;
+  @include desktop {
+    top: 0;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    text-align: left;
+    min-height: 48px !important;
+    height: 100vh !important;
+    max-height: 48px !important;
+    cursor: pointer;
+    &:last-of-type {
+      margin-bottom: 0;
+      height: auto !important;
+      min-height: auto !important;
+    }
+  }
 }
 
 .line {
@@ -22,6 +52,13 @@
   width: 100%;
   background-color: #fff;
   opacity: 0.3;
+  @include desktop {
+    left: auto;
+    right: 0;
+    height: 100%;
+    max-width: 2px;
+    width: 100%;
+  }
 }
 
 .spot {
@@ -56,6 +93,52 @@
       max-width: 34px;
       top: -45px;
       background-color: #0057ff;
+    }
+  }
+  @include desktop {
+    display: block;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #fff;
+    opacity: 0.8;
+    min-width: 100%;
+    padding-top: 0;
+    text-align: left;
+    top: 0;
+    @include hover {
+      opacity: 1;
+    }
+    &::after {
+      top: 50%;
+      left: auto;
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+    &_active {
+      opacity: 1;
+      &::after {
+        background-color: #fff;
+        top: -5px;
+        left: auto;
+        right: 0;
+        transform: translateX(50%);
+      }
+      &::before {
+        transition: 0.3s;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: auto;
+        right: 0;
+        transform: translate(50%, -50%);
+        border-radius: 50%;
+        height: 48px;
+        max-width: 48px;
+        width: 100vw;
+        background-color: #fff;
+        opacity: 0.5;
+      }
     }
   }
 }

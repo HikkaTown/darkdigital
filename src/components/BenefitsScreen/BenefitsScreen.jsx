@@ -38,6 +38,7 @@ export default function BenefitsScreen({
   classPanel,
   dataXpos,
   dataYpos,
+  setShowAll,
 }) {
   const [activeItem, setActiveItem] = useState(1);
   const handlerSelectItem = (id) => {
@@ -48,6 +49,10 @@ export default function BenefitsScreen({
       className={cs(classPanel, s.page)}
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
+      onClick={() => {
+        setShowAll(false);
+        changePosition(dataXpos, dataYpos);
+      }}
     >
       <div className={s.container}>
         <Header />
@@ -71,17 +76,18 @@ export default function BenefitsScreen({
                 <LazyImageWrapper
                   src={item.iconSrc}
                   className={[
-                    cs(s.icon, activeItem !== item.id ? s.icon_deactive : ""),
+                    // cs(s.icon, activeItem !== item.id ? s.icon_deactive : ""),
+                    cs(s.icon),
                   ]}
                   wrapperClass={cs(
-                    s.icon_wrapper,
-                    activeItem !== item.id ? s.icon_wrapper_deactive : ""
+                    s.icon_wrapper
+                    // activeItem !== item.id ? s.icon_wrapper_deactive : ""
                   )}
                 />
                 <p
                   className={cs(
-                    s.text,
-                    activeItem !== item.id ? s.text_second : ""
+                    s.text
+                    // activeItem !== item.id ? s.text_second : ""
                   )}
                 >
                   {item.title}

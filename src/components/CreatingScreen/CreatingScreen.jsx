@@ -69,6 +69,7 @@ export default function CreatingScreen({
   dataXpos,
   dataYpos,
   changePosition,
+  setShowAll,
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   return (
@@ -76,6 +77,10 @@ export default function CreatingScreen({
       className={cs(classPanel, s.page)}
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
+      onClick={() => {
+        setShowAll(false);
+        changePosition(dataXpos, dataYpos);
+      }}
     >
       <div className={s.container}>
         <Header classDark={s.dark} classDigital={s.digital} />

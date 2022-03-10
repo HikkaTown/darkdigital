@@ -94,6 +94,22 @@
       top: -45px;
       background-color: #0057ff;
     }
+    &::before {
+      transition: 0.3s;
+      content: "";
+      position: absolute;
+      top: -52px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8);
+      border-radius: 50%;
+      height: 48px;
+      max-width: 48px;
+      width: 100vw;
+      background-color: #fff;
+      opacity: 0.5;
+
+      animation: circleAnimate 1.2s infinite;
+    }
   }
   @include desktop {
     display: block;
@@ -137,8 +153,31 @@
         max-width: 48px;
         width: 100vw;
         background-color: #fff;
+        animation: circleAnimateDesktop 1.2s infinite;
         opacity: 0.5;
       }
     }
+  }
+}
+
+@keyframes circleAnimate {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+
+  to {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes circleAnimateDesktop {
+  from {
+    opacity: 0;
+    transform: translate(50%, -50%) scale(0.5);
+  }
+
+  to {
+    transform: translate(50%, -50%) scale(1);
   }
 }

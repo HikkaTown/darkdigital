@@ -19,7 +19,7 @@ export const positions = [
   },
   {
     title: "Контакты",
-    xPos: -1,
+    xPos: 1,
     yPos: 1,
     className: s.nav_up_right,
     arrowFirstClass: s.arrow_up_right,

@@ -9,12 +9,17 @@ export default function ProjectScreen({
   dataXpos,
   dataYpos,
   changePosition,
+  setShowAll,
 }) {
   return (
     <div
       className={cs(classPanel, s.page)}
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
+      onClick={() => {
+        setShowAll(false);
+        changePosition(dataXpos, dataYpos);
+      }}
     >
       <div className={s.container}>
         <Header />

@@ -50,12 +50,17 @@ export default function ServicesScreen({
   dataXpos,
   dataYpos,
   changePosition,
+  setShowAll,
 }) {
   return (
     <div
       className={cs(classPanel, s.page)}
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
+      onClick={() => {
+        setShowAll(false);
+        changePosition(dataXpos, dataYpos);
+      }}
     >
       <div className={s.container}>
         <Header classDigital={s.white_logo} classDark={s.dark_logo} />

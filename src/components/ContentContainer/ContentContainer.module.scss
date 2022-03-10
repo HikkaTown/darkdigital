@@ -5,6 +5,12 @@
 
   &.show_all {
     transform: rotateY(-15deg) scale(0.2);
+    overflow: visible;
+    .panel {
+      @include hover {
+        opacity: 0.5;
+      }
+    }
   }
 }
 
@@ -60,10 +66,10 @@
   &[data-y-pos="-2"] {
     top: 200%;
   }
-  &[data-y-pos="-1"] {
+  &[data-y-pos="1"] {
     top: 100%;
   }
-  &[data-y-pos="1"] {
+  &[data-y-pos="-1"] {
     top: -100%;
   }
   &[data-y-pos="2"] {

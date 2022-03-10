@@ -3,15 +3,21 @@ import s from "./OpenBlockList.module.scss";
 import cs from "classnames";
 import { AnimatePresence } from "framer-motion";
 import ModalSectionList from "../../ModalSectionList/ModalSectionList";
+import useWindowSize from "../../../hooks/useWindowSize";
 export default function OpenBlockList({
   className,
   onChangePosition,
   onClick,
+  setShowAll,
 }) {
   const [isOpened, setIsOpened] = useState(false);
-
+  const size = useWindowSize();
   const handlerOpened = () => {
-    setIsOpened((prev) => !prev);
+    if (size.width > 768) {
+      setShowAll((prev) => !prev);
+    } else {
+      setIsOpened((prev) => !prev);
+    }
   };
 
   return (

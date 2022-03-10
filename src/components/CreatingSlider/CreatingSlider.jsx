@@ -13,13 +13,10 @@ export default function CreatingSlider({
   const [sliderRef, instaceRef] = useKeenSlider({
     initial: currentSlide,
     loop: true,
-    slides: {
-      // origin: "center",
-      // spacing: 15,
-    },
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
-    },
+    drag: false,
+    // slideChanged(slider) {
+    //   setCurrentSlide(slider.track.details.rel);
+    // },
   });
   useEffect(() => {
     instaceRef.current.moveToIdx(currentSlide);

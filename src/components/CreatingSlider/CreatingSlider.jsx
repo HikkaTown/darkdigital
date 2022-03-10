@@ -1,29 +1,32 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
-import s from "./Timeline.module.scss";
+import s from "./CreatingSlider.module.scss";
 import cs from "classnames";
+import CardCreating from "../uikit/CardCreating/CardCreating";
 
-export default function Timeline({ currentSlide, setCurrentSlide, data }) {
+export default function CreatingSlider({
+  currentSlide,
+  setCurrentSlide,
+  data,
+}) {
   const [sliderRef, instaceRef] = useKeenSlider({
     initial: currentSlide,
     loop: true,
-    mode: "free",
-    defaultAnimation: {
-      duration: 0.6,
-    },
     slides: {
-      perView: "auto",
-      origin: "center",
-      spacing: 15,
+      // origin: "center",
+      // spacing: 15,
     },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
   });
+  useEffect(() => {
+    instaceRef.current.moveToIdx(currentSlide);
+  }, [currentSlide]);
   return (
     <div className={cs("navigation-wrapper", s.wrapper)}>
       <div ref={sliderRef} className={cs("keen-slider", s.slider)}>
-        <span className={s.line}></span>
         {data.map((item, index) => {
           return (
             <div
@@ -33,11 +36,7 @@ export default function Timeline({ currentSlide, setCurrentSlide, data }) {
                 instaceRef.current.moveToIdx(index);
               }}
             >
-              <span
-                className={cs(s.spot, currentSlide === index && s.spot_active)}
-              >
-                {item.name}
-              </span>
+              <CardCreating data={item} key={index} />
             </div>
           );
         })}

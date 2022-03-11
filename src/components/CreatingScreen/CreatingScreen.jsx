@@ -70,6 +70,7 @@ export default function CreatingScreen({
   dataYpos,
   changePosition,
   setShowAll,
+  showAll,
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   return (
@@ -78,8 +79,10 @@ export default function CreatingScreen({
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
       onClick={() => {
-        setShowAll(false);
-        changePosition(dataXpos, dataYpos);
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
       }}
     >
       <div className={s.container}>
@@ -87,6 +90,7 @@ export default function CreatingScreen({
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
         <p className={s.head}>Разработка сайтов всех типов</p>
         <div className={s.content}>

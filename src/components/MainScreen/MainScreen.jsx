@@ -18,6 +18,7 @@ export default function MainScreen({
   dataYpos,
   changePosition,
   setShowAll,
+  showAll,
 }) {
   return (
     <div
@@ -25,7 +26,10 @@ export default function MainScreen({
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
       onClick={() => {
-        changePosition(dataXpos, dataYpos);
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
       }}
     >
       <div className={s.container}>

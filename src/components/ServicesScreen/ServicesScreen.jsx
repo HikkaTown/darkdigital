@@ -51,6 +51,7 @@ export default function ServicesScreen({
   dataYpos,
   changePosition,
   setShowAll,
+  showAll,
 }) {
   return (
     <div
@@ -58,8 +59,10 @@ export default function ServicesScreen({
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
       onClick={() => {
-        setShowAll(false);
-        changePosition(dataXpos, dataYpos);
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
       }}
     >
       <div className={s.container}>
@@ -67,6 +70,7 @@ export default function ServicesScreen({
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
         <div className={s.content}>
           <div className={s.head}>

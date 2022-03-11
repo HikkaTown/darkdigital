@@ -47,7 +47,6 @@
   align-items: center;
   margin-bottom: 45px;
   &:last-of-type {
-    align-items: flex-start;
     @include tablet {
       align-items: center;
     }

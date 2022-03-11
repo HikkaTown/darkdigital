@@ -10,6 +10,7 @@ export default function ProjectScreen({
   dataYpos,
   changePosition,
   setShowAll,
+  showAll,
 }) {
   return (
     <div
@@ -17,8 +18,10 @@ export default function ProjectScreen({
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
       onClick={() => {
-        setShowAll(false);
-        changePosition(dataXpos, dataYpos);
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
       }}
     >
       <div className={s.container}>
@@ -26,6 +29,7 @@ export default function ProjectScreen({
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
         <p className={s.head}>Наши сервисы и проекты</p>
       </div>

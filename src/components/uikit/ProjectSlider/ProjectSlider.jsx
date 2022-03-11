@@ -6,11 +6,12 @@ import { LazyImageWrapper } from "../../LazyImage/LazyImage";
 import ProjectPreviewModal from "../../ProjectPreviewModal/ProjectPreviewModal";
 import { AnimatePresence } from "framer-motion";
 import ArrowSlider from "../ArrowSlider/ArrowSlider";
+import useWindowSize from "../../../hooks/useWindowSize";
 
 const projectData = [
   {
     id: 1,
-    imagePc: "",
+    imagePc: "project/tab/1.jpg",
     imageTab: "project/tab/1.jpg",
     name: "REVISUAL",
     status: true,
@@ -20,8 +21,8 @@ const projectData = [
   },
   {
     id: 2,
-    imagePc: "",
-    imageTab: "",
+    imagePc: "project/tab/2.jpg",
+    imageTab: "project/tab/2.jpg",
     name: "Knightsbridge Private Park",
     status: true,
     nameColor: "black",
@@ -30,8 +31,8 @@ const projectData = [
   },
   {
     id: 3,
-    imagePc: "",
-    imageTab: "",
+    imagePc: "project/tab/3.jpg",
+    imageTab: "project/tab/3.jpg",
     name: "АКК",
     nameColor: "white",
     status: true,
@@ -40,12 +41,63 @@ const projectData = [
   },
   {
     id: 4,
-    imagePc: "",
-    imageTab: "",
+    imagePc: "project/tab/4.jpg",
+    imageTab: "project/tab/4.jpg",
     name: "Арсенал",
     nameColor: "black",
+    tabletColor: "white",
     status: false,
     imageMob: "project/mob/4.jpg",
+    presentationImage: "",
+  },
+  {
+    id: 5,
+    imagePc: "project/tab/5.jpg",
+    imageTab: "project/tab/5.jpg",
+    name: "Jewelry",
+    nameColor: "black",
+    status: true,
+    imageMob: "project/mob/5.jpg",
+    presentationImage: "",
+  },
+  {
+    id: 6,
+    imagePc: "project/tab/6.jpg",
+    imageTab: "project/tab/6.jpg",
+    name: "MDM-Alliance",
+    nameColor: "black",
+    status: true,
+    imageMob: "project/mob/6.jpg",
+    presentationImage: "",
+  },
+  {
+    id: 7,
+    imagePc: "project/tab/7.jpg",
+    imageTab: "project/tab/7.jpg",
+    name: "Shtoi-na-zakaz",
+    nameColor: "white",
+    status: false,
+    imageMob: "project/mob/7.jpg",
+    presentationImage: "",
+  },
+  {
+    id: 8,
+    imagePc: "project/tab/8.jpg",
+    imageTab: "project/tab/8.jpg",
+    name: "T9shop",
+    nameColor: "white",
+    status: true,
+    imageMob: "project/mob/8.jpg",
+    presentationImage: "",
+  },
+  {
+    id: 9,
+    imagePc: "project/tab/9.jpg",
+    imageTab: "project/tab/9.jpg",
+    name: "DELTA17",
+    nameColor: "white",
+    status: false,
+    imageMob: "project/mob/9.jpg",
     presentationImage: "",
   },
 ];
@@ -55,7 +107,7 @@ export default function ProjectSlider({ className }) {
   const [isOpened, setIsOpened] = useState(false);
   const [src, setSrc] = useState("");
   const [loaded, setLoaded] = useState(false);
-
+  const size = useWindowSize();
   const handleClose = () => {
     setIsOpened((prev) => !prev);
   };
@@ -99,7 +151,12 @@ export default function ProjectSlider({ className }) {
                   srcMobile={item.imageMob}
                   alt={item.name}
                 />
-                <h3 className={s.card_name} style={{ color: item.nameColor }}>
+                <h3
+                  className={s.card_name}
+                  style={{
+                    color: item.nameColor,
+                  }}
+                >
                   {item.name}
                 </h3>
                 <button

@@ -11,6 +11,7 @@ export default function WhyWeScreen({
   dataYpos,
   changePosition,
   setShowAll,
+  showAll,
 }) {
   return (
     <div
@@ -18,8 +19,10 @@ export default function WhyWeScreen({
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
       onClick={() => {
-        setShowAll(false);
-        changePosition(dataXpos, dataYpos);
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
       }}
     >
       <div className={s.container}>
@@ -27,6 +30,7 @@ export default function WhyWeScreen({
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
         <p className={s.head}>
           Почему разработку сайта под ключ стоит заказать у нас

@@ -39,6 +39,7 @@ export default function BenefitsScreen({
   dataXpos,
   dataYpos,
   setShowAll,
+  showAll,
 }) {
   const [activeItem, setActiveItem] = useState(1);
   const handlerSelectItem = (id) => {
@@ -50,8 +51,10 @@ export default function BenefitsScreen({
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
       onClick={() => {
-        setShowAll(false);
-        changePosition(dataXpos, dataYpos);
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
       }}
     >
       <div className={s.container}>
@@ -59,6 +62,7 @@ export default function BenefitsScreen({
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
       </div>
       <p className={s.head}>Преимущества</p>

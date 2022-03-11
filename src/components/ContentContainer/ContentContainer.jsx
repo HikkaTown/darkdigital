@@ -37,6 +37,7 @@ export default function ContentContainer() {
           dataXpos={0}
           dataYpos={0}
           changePosition={handleNav}
+          showAll={showAll}
           setShowAll={setShowAll}
         />
         <ConctactScreen
@@ -44,6 +45,7 @@ export default function ContentContainer() {
           dataXpos={1}
           dataYpos={-1}
           changePosition={handleNav}
+          showAll={showAll}
           setShowAll={setShowAll}
         />
         <ServicesScreen
@@ -51,6 +53,7 @@ export default function ContentContainer() {
           dataXpos={0}
           dataYpos={-1}
           changePosition={handleNav}
+          showAll={showAll}
           setShowAll={setShowAll}
         />
         <AboutUsScreen
@@ -58,6 +61,7 @@ export default function ContentContainer() {
           dataXpos={-1}
           dataYpos={1}
           changePosition={handleNav}
+          showAll={showAll}
           setShowAll={setShowAll}
         />
         <BenefitsScreen
@@ -65,6 +69,7 @@ export default function ContentContainer() {
           dataXpos={1}
           dataYpos={1}
           changePosition={handleNav}
+          showAll={showAll}
           setShowAll={setShowAll}
         />
         <ProjectScreen
@@ -72,6 +77,7 @@ export default function ContentContainer() {
           dataXpos={-1}
           dataYpos={-1}
           changePosition={handleNav}
+          showAll={showAll}
           setShowAll={setShowAll}
         />
         <WhyWeScreen
@@ -79,6 +85,7 @@ export default function ContentContainer() {
           dataXpos={1}
           dataYpos={0}
           changePosition={handleNav}
+          showAll={showAll}
           setShowAll={setShowAll}
         />
         <CreatingScreen
@@ -86,6 +93,7 @@ export default function ContentContainer() {
           dataXpos={0}
           dataYpos={1}
           changePosition={handleNav}
+          showAll={showAll}
           setShowAll={setShowAll}
         />
       </div>

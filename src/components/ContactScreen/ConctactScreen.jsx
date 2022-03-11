@@ -11,6 +11,7 @@ export default function ConctactScreen({
   dataYpos,
   changePosition,
   setShowAll,
+  showAll,
 }) {
   return (
     <div
@@ -18,8 +19,10 @@ export default function ConctactScreen({
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
       onClick={() => {
-        setShowAll(false);
-        changePosition(dataXpos, dataYpos);
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
       }}
     >
       {/* <CanvasBackground className={s.canvas} /> */}
@@ -28,6 +31,7 @@ export default function ConctactScreen({
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
         <p className={s.head}>Контакты</p>
         <p className={s.title}>

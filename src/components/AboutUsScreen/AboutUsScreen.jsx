@@ -9,6 +9,7 @@ export default function AboutUsScreen({
   dataXpos,
   dataYpos,
   setShowAll,
+  showAll,
 }) {
   return (
     <div
@@ -16,8 +17,10 @@ export default function AboutUsScreen({
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
       onClick={() => {
-        setShowAll(false);
-        changePosition(dataXpos, dataYpos);
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
       }}
     >
       <div className={s.container}>
@@ -25,6 +28,7 @@ export default function AboutUsScreen({
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
         <p className={s.head}>О нас</p>
         <div className={s.content}>

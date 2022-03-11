@@ -25,6 +25,8 @@
 }
 
 .panel {
+  overflow-y: scroll;
+  @include scroll;
   overflow: hidden;
   height: 100vh;
   position: absolute;

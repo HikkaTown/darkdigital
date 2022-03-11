@@ -5,6 +5,7 @@ import LogoComponent from "../uikit/LogoComponent/LogoComponent";
 import ServicesButton from "../uikit/ServicesButton/ServicesButton";
 import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
+import Container from "../Container/Container";
 
 const servicesList = [
   {
@@ -65,7 +66,7 @@ export default function ServicesScreen({
         }
       }}
     >
-      <div className={s.container}>
+      <Container>
         <Header classDigital={s.white_logo} classDark={s.dark_logo} />
         <OpenBlockList
           className={s.block_list}
@@ -98,7 +99,7 @@ export default function ServicesScreen({
             })}
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

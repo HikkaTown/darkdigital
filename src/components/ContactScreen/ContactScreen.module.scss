@@ -37,6 +37,11 @@
   line-height: 34px;
   text-transform: uppercase;
   color: #fff;
+  @include desktop {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+  }
 }
 
 .title {

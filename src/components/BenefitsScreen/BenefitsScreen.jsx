@@ -4,6 +4,7 @@ import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import cs from "classnames";
 import s from "./BenefitsScreen.module.scss";
 import { LazyImageWrapper } from "../LazyImage";
+import Container from "../Container/Container";
 
 const list = [
   {
@@ -57,50 +58,50 @@ export default function BenefitsScreen({
         }
       }}
     >
-      <div className={s.container}>
+      <Container>
         <Header />
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
           setShowAll={setShowAll}
         />
-      </div>
-      <p className={s.head}>Преимущества</p>
-      <div className={s.benefit_list}>
-        <div className={s.icon_bar}>
-          {list.map((item, index) => {
-            return (
-              <span
-                className={s.item}
-                key={index}
-                onClick={() => {
-                  handlerSelectItem(item.id);
-                }}
-              >
-                <LazyImageWrapper
-                  src={item.iconSrc}
-                  className={[
-                    // cs(s.icon, activeItem !== item.id ? s.icon_deactive : ""),
-                    cs(s.icon),
-                  ]}
-                  wrapperClass={cs(
-                    s.icon_wrapper
-                    // activeItem !== item.id ? s.icon_wrapper_deactive : ""
-                  )}
-                />
-                <p
-                  className={cs(
-                    s.text
-                    // activeItem !== item.id ? s.text_second : ""
-                  )}
+        <p className={s.head}>Преимущества</p>
+        <div className={s.benefit_list}>
+          <div className={s.icon_bar}>
+            {list.map((item, index) => {
+              return (
+                <span
+                  className={s.item}
+                  key={index}
+                  onClick={() => {
+                    handlerSelectItem(item.id);
+                  }}
                 >
-                  {item.title}
-                </p>
-              </span>
-            );
-          })}
+                  <LazyImageWrapper
+                    src={item.iconSrc}
+                    className={[
+                      // cs(s.icon, activeItem !== item.id ? s.icon_deactive : ""),
+                      cs(s.icon),
+                    ]}
+                    wrapperClass={cs(
+                      s.icon_wrapper
+                      // activeItem !== item.id ? s.icon_wrapper_deactive : ""
+                    )}
+                  />
+                  <p
+                    className={cs(
+                      s.text
+                      // activeItem !== item.id ? s.text_second : ""
+                    )}
+                  >
+                    {item.title}
+                  </p>
+                </span>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

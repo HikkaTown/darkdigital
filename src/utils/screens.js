@@ -37,7 +37,7 @@ export const positions = [
 
   {
     title: "Почему мы",
-    xPos: -1,
+    xPos: 1,
     yPos: 0,
     className: s.nav_right,
     arrowFirstClass: s.arrow_right,

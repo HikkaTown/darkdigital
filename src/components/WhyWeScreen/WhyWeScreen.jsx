@@ -4,6 +4,7 @@ import s from "./WhyWeScreen.module.scss";
 import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import { LazyImageWrapper } from "../LazyImage/LazyImage";
+import Container from "../Container/Container";
 
 export default function WhyWeScreen({
   classPanel,
@@ -25,7 +26,7 @@ export default function WhyWeScreen({
         }
       }}
     >
-      <div className={s.container}>
+      <Container>
         <Header classDark={s.dark} classDigital={s.digital} />
         <OpenBlockList
           className={s.block_list}
@@ -101,7 +102,7 @@ export default function WhyWeScreen({
             minima dicta praesentium harum qui cumque tempora, illo nobis!
           </p>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import cs from "classnames";
 import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import ProjectSlider from "../uikit/ProjectSlider/ProjectSlider";
+import Container from "../Container/Container";
 export default function ProjectScreen({
   classPanel,
   dataXpos,
@@ -24,7 +25,7 @@ export default function ProjectScreen({
         }
       }}
     >
-      <div className={s.container}>
+      <Container>
         <Header />
         <OpenBlockList
           className={s.block_list}
@@ -32,7 +33,7 @@ export default function ProjectScreen({
           setShowAll={setShowAll}
         />
         <p className={s.head}>Наши сервисы и проекты</p>
-      </div>
+      </Container>
       <ProjectSlider />
     </div>
   );

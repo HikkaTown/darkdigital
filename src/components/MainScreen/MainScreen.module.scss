@@ -81,4 +81,7 @@
   @include hover {
     opacity: 0.5;
   }
+  @include desktop {
+    margin-top: 30px;
+  }
 }

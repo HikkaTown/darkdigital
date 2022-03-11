@@ -4,6 +4,8 @@ import OverlayingPopup from "../OverlayingPopup/OverlayingPopup";
 import Portal from "../Portal/Portal";
 import { motion } from "framer-motion";
 import s from "./ModalFeedback.module.scss";
+import Header from "../uikit/Header/Header";
+import LogoComponent from "../uikit/LogoComponent/LogoComponent";
 export default function ModalFeedback({ isOpened, onClose }) {
   const variantAnim = {
     hidden: {
@@ -34,6 +36,7 @@ export default function ModalFeedback({ isOpened, onClose }) {
           exit="hidden2"
           transition={{ duration: 0.3, type: "tween" }}
         >
+          <LogoComponent classLogo={s.header} classDigital={s.digital} />
           <div className={s.content}>
             <button onClick={onClose} type="button" className={s.button_close}>
               <span className={s.line}></span>

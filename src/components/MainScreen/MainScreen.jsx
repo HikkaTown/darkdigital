@@ -11,6 +11,7 @@ import ModalSectionList from "../ModalSectionList/ModalSectionList";
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import Header from "../uikit/Header/Header";
+import Container from "../Container/Container";
 
 export default function MainScreen({
   classPanel,
@@ -32,7 +33,7 @@ export default function MainScreen({
         }
       }}
     >
-      <div className={s.container}>
+      <Container className={s.container}>
         <Header />
         <OpenBlockList
           className={s.show_screens}
@@ -41,7 +42,7 @@ export default function MainScreen({
         />
         <RippleMainScreen />
         <ContentMainScreen />
-      </div>
+      </Container>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import cs from "classnames";
 import s from "./CreatingScreen.module.scss";
 import Timeline from "../Timeline/Timeline";
 import CreatingSlider from "../CreatingSlider/CreatingSlider";
+import Container from "../Container/Container";
 
 const list = [
   {
@@ -85,7 +86,7 @@ export default function CreatingScreen({
         }
       }}
     >
-      <div className={s.container}>
+      <Container>
         <Header classDark={s.dark} classDigital={s.digital} />
         <OpenBlockList
           className={s.block_list}
@@ -105,7 +106,7 @@ export default function CreatingScreen({
             setCurrentSlide={setCurrentSlide}
           />
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

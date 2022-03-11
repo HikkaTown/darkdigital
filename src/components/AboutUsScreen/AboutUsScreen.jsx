@@ -3,6 +3,7 @@ import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import s from "./AboutUsScreen.module.scss";
 import cs from "classnames";
+import Container from "../Container/Container";
 export default function AboutUsScreen({
   changePosition,
   classPanel,
@@ -23,7 +24,7 @@ export default function AboutUsScreen({
         }
       }}
     >
-      <div className={s.container}>
+      <Container>
         <Header />
         <OpenBlockList
           className={s.block_list}
@@ -153,7 +154,7 @@ export default function AboutUsScreen({
             laborum ad!
           </p>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 .overlay {
-  overflow: scroll;
   height: 100%;
   left: 50%;
+  overflow-y: scroll;
+  @include scroll;
   transform: translateX(-50%);
 }
 

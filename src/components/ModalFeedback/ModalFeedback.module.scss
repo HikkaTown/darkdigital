@@ -10,6 +10,17 @@
   }
 }
 
+.header {
+  position: absolute !important;
+  top: 30px !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+
+.digital {
+  color: #fff !important;
+}
+
 .form {
   position: relative;
   max-width: 338px;

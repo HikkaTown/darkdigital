@@ -5,6 +5,7 @@ import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import s from "./ContactScreen.module.scss";
 import cs from "classnames";
 import CanvasBackground from "../uikit/CanvasBackground/CanvasBackground";
+import Container from "../Container/Container";
 export default function ConctactScreen({
   classPanel,
   dataXpos,
@@ -26,7 +27,7 @@ export default function ConctactScreen({
       }}
     >
       {/* <CanvasBackground className={s.canvas} /> */}
-      <div className={s.container}>
+      <Container>
         <Header classDark={s.dark} classDigital={s.digital} />
         <OpenBlockList
           className={s.block_list}
@@ -116,7 +117,7 @@ export default function ConctactScreen({
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

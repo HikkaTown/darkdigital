@@ -5,6 +5,7 @@ import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import { LazyImageWrapper } from "../LazyImage/LazyImage";
 import Container from "../Container/Container";
+import CanvasBackground from "../uikit/CanvasBackground/CanvasBackground";
 
 export default function WhyWeScreen({
   classPanel,
@@ -26,6 +27,7 @@ export default function WhyWeScreen({
         }
       }}
     >
+      <CanvasBackground className={s.canvas} />
       <Container>
         <Header classDark={s.dark} classDigital={s.digital} />
         <OpenBlockList

@@ -7,6 +7,20 @@
     background: linear-gradient(to right, #0057ff 50%, #1c1c1c 50%);
   }
 }
+
+.canvas {
+  @include tablet {
+    display: block;
+    max-width: 50vw;
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+}
 .container {
   max-width: calc(100% - 30px);
   width: 100vw;

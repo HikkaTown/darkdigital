@@ -5,6 +5,7 @@ import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import ProjectSlider from "../uikit/ProjectSlider/ProjectSlider";
 import Container from "../Container/Container";
+import CanvasBackground from "../uikit/CanvasBackground/CanvasBackground";
 export default function ProjectScreen({
   classPanel,
   dataXpos,
@@ -25,6 +26,7 @@ export default function ProjectScreen({
         }
       }}
     >
+      <CanvasBackground className={s.canvas} />
       <Container>
         <Header />
         <OpenBlockList

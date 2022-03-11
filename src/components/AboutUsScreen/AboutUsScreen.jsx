@@ -5,6 +5,7 @@ import s from "./AboutUsScreen.module.scss";
 import cs from "classnames";
 import Container from "../Container/Container";
 import { LazyImageWrapper } from "../LazyImage";
+import CanvasBackground from "../uikit/CanvasBackground/CanvasBackground";
 export default function AboutUsScreen({
   changePosition,
   classPanel,
@@ -25,6 +26,7 @@ export default function AboutUsScreen({
         }
       }}
     >
+      <CanvasBackground className={s.canvas} />
       <Container>
         <Header />
         <OpenBlockList

@@ -5,6 +5,7 @@ import cs from "classnames";
 import s from "./BenefitsScreen.module.scss";
 import { LazyImageWrapper } from "../LazyImage";
 import Container from "../Container/Container";
+import CanvasBackground from "../uikit/CanvasBackground/CanvasBackground";
 
 const list = [
   {
@@ -58,6 +59,7 @@ export default function BenefitsScreen({
         }
       }}
     >
+      <CanvasBackground className={s.canvas} />
       <Container>
         <Header />
         <OpenBlockList

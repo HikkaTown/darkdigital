@@ -44,7 +44,7 @@ export default function CanvasBackground({ className }) {
         for (let i = 0; i < 6; i++) {
           ctx.lineTo(x + r * Math.cos(a * i), y + r * Math.sin(a * i));
           ctx.strokeStyle = "rgba(255,255,255, 0.2)";
-          ctx.shadowBlur = 15;
+          ctx.shadowBlur = 8;
           ctx.shadowColor = "#fff";
         }
         ctx.lineWidth = 0.5;

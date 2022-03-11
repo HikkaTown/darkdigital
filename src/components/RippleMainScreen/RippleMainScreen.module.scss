@@ -12,6 +12,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(
+    rgba($color: #1c1c1c, $alpha: 1) 30%,
+    rgba($color: #1c1c1c, $alpha: 0.5)
+  );
 }
 
 .ripple {

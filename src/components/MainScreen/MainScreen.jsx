@@ -12,6 +12,7 @@ import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import Header from "../uikit/Header/Header";
 import Container from "../Container/Container";
+import CanvasBackground from "../uikit/CanvasBackground/CanvasBackground";
 
 export default function MainScreen({
   classPanel,
@@ -33,6 +34,7 @@ export default function MainScreen({
         }
       }}
     >
+      <CanvasBackground />
       <Container className={s.container}>
         <Header />
         <OpenBlockList

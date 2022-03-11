@@ -28,7 +28,7 @@ export default function ContentContainer() {
       />
       <div
         style={{
-          transform: `translateX(${posX}00%) translateY(${posY}00%)`,
+          transform: `translateX(${-posX}00%) translateY(${-posY}00%)`,
         }}
         className={cs(s.panel_wrap, s.animate_none)}
       >

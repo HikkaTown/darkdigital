@@ -6,6 +6,9 @@
   &.show_all {
     transform: rotateY(-15deg) scale(0.2);
     overflow: visible;
+    .panel_wrap {
+      transform: translate(0) !important;
+    }
     .panel {
       @include hover {
         opacity: 0.5;

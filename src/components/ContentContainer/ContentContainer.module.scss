@@ -4,7 +4,8 @@
   overflow: hidden;
 
   &.show_all {
-    transform: rotateY(-15deg) scale(0.2);
+    // transform: rotateY(-15deg) scale(0.2);
+    transform: perspective(329px) rotateY(-3deg) rotateX(1deg) scale(0.2);
     overflow: visible;
     .panel_wrap {
       transform: translate(0) !important;

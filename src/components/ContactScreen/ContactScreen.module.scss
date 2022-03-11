@@ -7,9 +7,17 @@
 }
 
 .canvas {
-  width: 100vw;
+  // width: 100vw;
   @include tablet {
+    // width: 50vw;
+    // width: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
     width: 50vw;
+    height: 100vh;
+    overflow: hidden;
   }
 }
 

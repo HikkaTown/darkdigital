@@ -26,7 +26,7 @@ export default function ConctactScreen({
         }
       }}
     >
-      {/* <CanvasBackground className={s.canvas} /> */}
+      <CanvasBackground className={s.canvas} />
       <Container>
         <Header classDark={s.dark} classDigital={s.digital} />
         <OpenBlockList

@@ -8,11 +8,14 @@ export default function CanvasBackground({ className }) {
       const cnv = canvasRef.current;
       const ctx = cnv.getContext("2d");
 
+      cnv.width = innerWidth;
+      cnv.height = innerHeight + 100;
+
       const a = (2 * Math.PI) / 6;
-      const r = 50;
+      const r = 60;
 
       function init() {
-        drawGrid(425, 611);
+        drawGrid(cnv.width + 300, cnv.height + 300);
       }
       init();
 
@@ -28,16 +31,40 @@ export default function CanvasBackground({ className }) {
         }
       }
 
+      function drawRect(color, x, y, w, h, shadowColor, shadowBlur, gco) {
+        ctx.globalCompositeOperation = gco;
+        ctx.shadowColor = shadowColor || `black`;
+        ctx.shadowBlur = shadowBlur || 1;
+        ctx.fillStyle = color;
+        ctx.fillRect(x, y, w, h);
+      }
+
       function drawHexagon(x, y) {
         ctx.beginPath();
         for (let i = 0; i < 6; i++) {
           ctx.lineTo(x + r * Math.cos(a * i), y + r * Math.sin(a * i));
+          ctx.strokeStyle = "rgba(255,255,255, 0.2)";
+          ctx.shadowBlur = 15;
+          ctx.shadowColor = "#fff";
         }
+        ctx.lineWidth = 0.5;
         ctx.closePath();
         ctx.stroke();
       }
+
+      drawHexagon(r, r);
+      drawHexagon(r + r + r * Math.cos(a), r + r * Math.sin(a));
     }
   }, []);
 
-  return <canvas className={cs(s.block, className)} ref={canvasRef}></canvas>;
+  return (
+    <div className={className}>
+      <canvas
+        className={cs(s.block)}
+        width="800"
+        height="500"
+        ref={canvasRef}
+      ></canvas>
+    </div>
+  );
 }

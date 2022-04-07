@@ -1,12 +1,34 @@
 .page {
   overflow: auto;
-  padding: 20px;
+  padding-top: 20px;
+  @include tablet {
+    padding: 0;
+    background: linear-gradient(to right, #0057ff 50%, #1c1c1c 50%);
+  }
+}
+
+.canvas {
+  @include tablet {
+    display: block;
+    max-width: 50vw;
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
 }
 
 .container {
   max-width: calc(100% - 30px);
   width: 100vw;
   margin: 0 auto;
+  @include desktop {
+    max-width: 90vw;
+    padding-top: 40px;
+  }
 }
 
 .block_list {
@@ -23,6 +45,11 @@
   font-size: 20px;
   line-height: 34px;
   color: #fff;
+  @include desktop {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+  }
 }
 
 .benefit_list {
@@ -47,7 +74,6 @@
   align-items: center;
   margin-bottom: 45px;
   &:last-of-type {
-    align-items: flex-start;
     @include tablet {
       align-items: center;
     }

@@ -11,28 +11,40 @@ import ModalSectionList from "../ModalSectionList/ModalSectionList";
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import Header from "../uikit/Header/Header";
+import Container from "../Container/Container";
+import CanvasBackground from "../uikit/CanvasBackground/CanvasBackground";
 
 export default function MainScreen({
   classPanel,
   dataXpos,
   dataYpos,
   changePosition,
+  setShowAll,
+  showAll,
 }) {
   return (
     <div
       className={cs(classPanel, s.page)}
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
+      onClick={() => {
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
+      }}
     >
-      <div className={s.container}>
+      <CanvasBackground />
+      <Container className={s.container}>
         <Header />
         <OpenBlockList
           className={s.show_screens}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
         <RippleMainScreen />
         <ContentMainScreen />
-      </div>
+      </Container>
     </div>
   );
 }

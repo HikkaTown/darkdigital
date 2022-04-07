@@ -1,15 +1,23 @@
 .page {
   overflow: auto;
-  padding: 20px;
+  padding-top: 20px;
   @include tablet {
     background: linear-gradient(to right, #0057ff 50%, #1c1c1c 50%);
   }
 }
 
 .canvas {
-  width: 100vw;
+  // width: 100vw;
   @include tablet {
+    // width: 50vw;
+    // width: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
     width: 50vw;
+    height: 100vh;
+    overflow: hidden;
   }
 }
 
@@ -37,6 +45,11 @@
   line-height: 34px;
   text-transform: uppercase;
   color: #fff;
+  @include desktop {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+  }
 }
 
 .title {

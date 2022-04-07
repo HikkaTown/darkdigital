@@ -14,6 +14,56 @@
   margin-right: auto;
 }
 
+.contact_block {
+  display: none;
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.mail {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  @include hover {
+    opacity: 0.5;
+  }
+  &_icon {
+    height: 15px;
+    max-width: 22px;
+    width: 100vw;
+    margin-right: 9px;
+    &_fill {
+      fill: #fff;
+    }
+  }
+}
+
+.phone {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  transition: 0.3s;
+  @include hover {
+    opacity: 0.5;
+  }
+  &_icon {
+    height: 21px;
+    max-width: 22px;
+    width: 100vw;
+    margin-right: 9px;
+    &_fill {
+      fill: #fff;
+    }
+  }
+}
+
 .nav {
   display: none;
   @include tablet {
@@ -21,7 +71,10 @@
   }
   @include desktop {
     display: flex;
-    position: relative;
+    position: absolute;
     z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
   }
 }

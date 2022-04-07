@@ -1,7 +1,7 @@
 .page {
+  padding-top: 20px;
   background-color: #1c1c1c;
   overflow: auto !important;
-  padding: 20px;
   @include tablet {
     background-color: #0057ff;
   }
@@ -83,6 +83,11 @@
   line-height: 24px;
   text-align: center;
   text-transform: uppercase;
+  @include desktop {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+  }
 }
 
 .description_none {

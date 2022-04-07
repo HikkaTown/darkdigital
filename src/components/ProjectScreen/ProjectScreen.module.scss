@@ -1,12 +1,27 @@
 .page {
+  padding-top: 20px;
   background-color: #1c1c1c;
   overflow: auto !important;
-  padding: 20px;
   @include tablet {
     background: linear-gradient(to right, #1c1c1c 50%, #0057ff 50%);
     padding-bottom: 50px;
   }
 }
+
+.canvas {
+  @include tablet {
+    display: block;
+    max-width: 50vw;
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+}
+
 .container {
   max-width: calc(100% - 30px);
   width: 100vw;
@@ -36,4 +51,9 @@
   color: #fff;
   text-transform: uppercase;
   text-align: center;
+  @include desktop {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+  }
 }

@@ -3,8 +3,8 @@ import s from "../components/NavigationBlock/NavigationBlock.module.scss";
 export const positions = [
   {
     title: "Портфолио",
-    xPos: 1,
-    yPos: 1,
+    xPos: -1,
+    yPos: -1,
     className: s.nav_up_left,
     arrowFirstClass: s.arrow_up_left,
     arrowSecondClass: s.arrow_up_left,
@@ -12,22 +12,22 @@ export const positions = [
   {
     title: "Услуги",
     xPos: 0,
-    yPos: 1,
+    yPos: -1,
     className: s.nav_up,
     arrowFirstClass: s.arrow_up,
     arrowSecondClass: s.arrow_up,
   },
   {
     title: "Контакты",
-    xPos: -1,
-    yPos: 1,
+    xPos: 1,
+    yPos: -1,
     className: s.nav_up_right,
     arrowFirstClass: s.arrow_up_right,
     arrowSecondClass: s.arrow_up_right,
   },
   {
     title: "Этапы работ",
-    xPos: 1,
+    xPos: -1,
     yPos: 0,
     className: s.nav_left,
     arrowFirstClass: s.arrow_left,
@@ -37,7 +37,7 @@ export const positions = [
 
   {
     title: "Почему мы",
-    xPos: -1,
+    xPos: 1,
     yPos: 0,
     className: s.nav_right,
     arrowFirstClass: s.arrow_right,
@@ -45,8 +45,8 @@ export const positions = [
   },
   {
     title: "О нас",
-    xPos: 1,
-    yPos: -1,
+    xPos: -1,
+    yPos: 1,
     className: s.nav_down_left,
     arrowFirstClass: s.arrow_down_left,
     arrowSecondClass: s.arrow_down_left,
@@ -54,15 +54,15 @@ export const positions = [
   {
     title: "Тарифы",
     xPos: 0,
-    yPos: -1,
+    yPos: 1,
     className: s.nav_down,
     arrowFirstClass: s.arrow_down,
     arrowSecondClass: s.arrow_down,
   },
   {
     title: "Преимущества",
-    xPos: -1,
-    yPos: -1,
+    xPos: 1,
+    yPos: 1,
     className: s.nav_down_right,
     arrowFirstClass: s.arrow_down_right,
     arrowSecondClass: s.arrow_down_right,

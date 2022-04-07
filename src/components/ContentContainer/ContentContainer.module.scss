@@ -1,10 +1,20 @@
 .site_wrap {
   transition: transform $fast $easing;
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
 
   &.show_all {
-    transform: rotateY(-15deg) scale(0.2);
+    // transform: rotateY(-15deg) scale(0.2);
+    transform: perspective(329px) rotateY(-3deg) rotateX(1deg) scale(0.2);
+    overflow: visible;
+    .panel_wrap {
+      transform: translate(0) !important;
+    }
+    .panel {
+      @include hover {
+        opacity: 0.5;
+      }
+    }
   }
 }
 
@@ -16,6 +26,8 @@
 }
 
 .panel {
+  overflow-y: scroll;
+  @include scroll;
   overflow: hidden;
   height: 100vh;
   position: absolute;
@@ -60,10 +72,10 @@
   &[data-y-pos="-2"] {
     top: 200%;
   }
-  &[data-y-pos="-1"] {
+  &[data-y-pos="1"] {
     top: 100%;
   }
-  &[data-y-pos="1"] {
+  &[data-y-pos="-1"] {
     top: -100%;
   }
   &[data-y-pos="2"] {

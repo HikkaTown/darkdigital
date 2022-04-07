@@ -5,24 +5,34 @@ import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
 import s from "./ContactScreen.module.scss";
 import cs from "classnames";
 import CanvasBackground from "../uikit/CanvasBackground/CanvasBackground";
+import Container from "../Container/Container";
 export default function ConctactScreen({
   classPanel,
   dataXpos,
   dataYpos,
   changePosition,
+  setShowAll,
+  showAll,
 }) {
   return (
     <div
       className={cs(classPanel, s.page)}
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
+      onClick={() => {
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
+      }}
     >
-      {/* <CanvasBackground className={s.canvas} /> */}
-      <div className={s.container}>
+      <CanvasBackground className={s.canvas} />
+      <Container>
         <Header classDark={s.dark} classDigital={s.digital} />
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
         <p className={s.head}>Контакты</p>
         <p className={s.title}>
@@ -107,7 +117,7 @@ export default function ConctactScreen({
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

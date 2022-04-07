@@ -5,6 +5,7 @@ import LogoComponent from "../uikit/LogoComponent/LogoComponent";
 import ServicesButton from "../uikit/ServicesButton/ServicesButton";
 import Header from "../uikit/Header/Header";
 import OpenBlockList from "../uikit/OpenBlockList/OpenBlockList";
+import Container from "../Container/Container";
 
 const servicesList = [
   {
@@ -50,18 +51,27 @@ export default function ServicesScreen({
   dataXpos,
   dataYpos,
   changePosition,
+  setShowAll,
+  showAll,
 }) {
   return (
     <div
       className={cs(classPanel, s.page)}
       data-x-pos={dataXpos}
       data-y-pos={dataYpos}
+      onClick={() => {
+        if (showAll) {
+          setShowAll(false);
+          changePosition(dataXpos, dataYpos);
+        }
+      }}
     >
-      <div className={s.container}>
+      <Container>
         <Header classDigital={s.white_logo} classDark={s.dark_logo} />
         <OpenBlockList
           className={s.block_list}
           onChangePosition={changePosition}
+          setShowAll={setShowAll}
         />
         <div className={s.content}>
           <div className={s.head}>
@@ -89,7 +99,7 @@ export default function ServicesScreen({
             })}
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }
